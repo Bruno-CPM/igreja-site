@@ -45,7 +45,7 @@
 .tabs {
   display: inline-flex;
   gap: 4px;
-  background: var(--linen-alt);
+  background: var(--navy-soft);
   padding: 5px;
   border-radius: 999px;
   margin: 28px 0 8px;
