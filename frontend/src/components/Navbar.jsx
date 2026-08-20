@@ -29,11 +29,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <NavLink to="/" className="navbar__brand">
-          <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-            <path d="M15 2 C6 2 6 12 6 12 V27 H24 V12 C24 12 24 2 15 2 Z" fill="none" stroke="currentColor" strokeWidth="2" />
-            <line x1="15" y1="2" x2="15" y2="27" stroke="currentColor" strokeWidth="1.4" opacity="0.6" />
-          </svg>
-          <span>Igreja<em>Comunidade</em></span>
+          <img src="/logo-vinculo-da-paz.png" alt="Vínculo da Paz" className="navbar__logo" />
         </NavLink>
 
         <nav className={`navbar__links ${open ? 'is-open' : ''}`}>

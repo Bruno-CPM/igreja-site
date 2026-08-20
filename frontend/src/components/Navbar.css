@@ -18,14 +18,12 @@
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--linen);
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
 }
-.navbar__brand svg { color: var(--gold); flex-shrink: 0; }
-.navbar__brand em { font-style: normal; color: var(--gold-soft); margin-left: 4px; }
+.navbar__logo {
+  height: 56px;
+  width: auto;
+  display: block;
+}
 
 .navbar__links {
   display: flex;
