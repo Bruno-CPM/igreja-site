@@ -31,7 +31,7 @@
 .contato-form textarea:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,162,75,0.25);
+  box-shadow: 0 0 0 3px rgba(65,105,225,0.25);
 }
 .contato-form button { align-self: flex-start; }
 .form-feedback { font-weight: 600; }
@@ -40,7 +40,7 @@
 
 .contato-info__list { color: var(--ink-soft); margin-bottom: 24px; }
 .contato-info__list li { color: var(--ink-soft); }
-.contato-info .media-placeholder { color: rgba(228,201,122,0.75); }
+.contato-info .media-placeholder { color: rgba(111,142,233,0.75); }
 
 @media (max-width: 900px) {
   .contato-grid { grid-template-columns: 1fr; }

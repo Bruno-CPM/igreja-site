@@ -20,7 +20,7 @@
   text-align: center;
   padding: 24px;
 }
-.hero__art-note { font-size: 0.78rem; color: rgba(228,201,122,0.7); font-style: italic; max-width: 22ch; }
+.hero__art-note { font-size: 0.78rem; color: rgba(111,142,233,0.7); font-style: italic; max-width: 22ch; }
 
 .home-intro { text-align: center; }
 .home-intro h2 { max-width: 30ch; margin-left: auto; margin-right: auto; }
