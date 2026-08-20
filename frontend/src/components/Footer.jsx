@@ -6,11 +6,10 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div>
-          <div className="footer__brand">Igreja<em>Comunidade</em></div>
+          <img src="/logo-vinculo-da-paz.png" alt="Vínculo da Paz" className="footer__logo" />
           <p className="footer__text">
             Um lugar para celebrar a fé, fortalecer a família e servir a comunidade.
           </p>
-          <p className="placeholder-note">[Logotipo e texto institucional a serem fornecidos]</p>
         </div>
 
         <div>
