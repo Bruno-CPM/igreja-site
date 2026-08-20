@@ -21,13 +21,18 @@ export default function Home() {
 
   return (
     <>
-      <section
-        className="hero"
-        style={{
-          backgroundImage:
-            "linear-gradient(100deg, rgba(4,6,14,0.88) 0%, rgba(4,6,14,0.72) 38%, rgba(10,14,28,0.35) 75%), url('/hero-culto.jpg')",
-        }}
-      >
+      <section className="hero">
+        <video
+          className="hero__video"
+          src="/hero-video.mp4"
+          poster="/hero-culto.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden="true"
+        />
+        <div className="hero__overlay" aria-hidden="true" />
         <div className="container hero__grid">
           <div>
             <span className="eyebrow">Sejam bem-vindos</span>
