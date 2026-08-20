@@ -7,23 +7,11 @@
   padding: 96px 0 80px;
 }
 .hero__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 56px;
-  align-items: center;
+  max-width: 640px;
 }
 .hero h1 { color: var(--linen); }
 .hero__lead { color: rgba(250,246,236,0.78); max-width: 46ch; font-size: 1.05rem; }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
-.hero__art {
-  aspect-ratio: 4 / 5;
-  color: var(--gold-soft);
-  flex-direction: column;
-  gap: 14px;
-  text-align: center;
-  padding: 24px;
-}
-.hero__art-note { font-size: 0.78rem; color: rgba(111,142,233,0.7); font-style: italic; max-width: 22ch; }
 
 .home-intro { text-align: center; }
 .home-intro h2 { max-width: 30ch; margin-left: auto; margin-right: auto; }
@@ -72,8 +60,6 @@
 .home-cta-center { text-align: center; margin-top: 40px; }
 
 @media (max-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__art { max-width: 320px; margin: 0 auto; }
   .home-links, .sermon-preview-grid { grid-template-columns: 1fr; }
   .event-highlight { grid-template-columns: 90px 1fr; }
 }

@@ -41,13 +41,6 @@ export default function Home() {
               <Link to="/eventos" className="btn btn-outline">Ver próximos eventos</Link>
             </div>
           </div>
-
-          <div className="hero__art arch-frame" aria-hidden="true">
-            <svg width="70" height="70" viewBox="0 0 30 30">
-              <path d="M15 2 C6 2 6 12 6 12 V27 H24 V12 C24 12 24 2 15 2 Z" fill="none" stroke="currentColor" strokeWidth="1.4" />
-            </svg>
-            <span className="hero__art-note">[imagem / vídeo institucional a ser fornecido]</span>
-          </div>
         </div>
       </section>
 
