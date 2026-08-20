@@ -1,5 +1,8 @@
 .hero {
-  background: radial-gradient(circle at 20% -10%, #2b47c2, var(--navy-deep) 70%);
+  background-color: var(--navy-deep);
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--linen);
   padding: 96px 0 80px;
 }
