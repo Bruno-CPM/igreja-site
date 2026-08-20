@@ -11,9 +11,11 @@
   --navy: #111111;
   --navy-soft: #2b2b2b;
   --linen: #faf6ec;
-  --linen-alt: #f1ead9;
-  --ink: #221f1a;
-  --ink-soft: #59503f;
+  --linen-alt: #151515;
+  --ink: #f5f1e6;
+  --ink-soft: #c9c2b0;
+  --ink-on-light: #221f1a;
+  --ink-soft-on-light: #59503f;
   --gold: #4169e1;
   --gold-soft: #6f8ee9;
   --brick: #9c4a36;
@@ -37,7 +39,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--linen);
+  background: var(--navy-deep);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -47,7 +49,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--navy-deep);
+  color: var(--ink);
   margin: 0 0 0.5em;
   line-height: 1.15;
   font-weight: 600;
@@ -137,11 +139,14 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: var(--radius);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--ink-on-light);
 }
 .card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-soft);
 }
+.card h1, .card h2, .card h3, .card h4 { color: var(--navy-deep); }
+.card p, .card .placeholder-note { color: var(--ink-soft-on-light); }
 
 .placeholder-note {
   font-size: 0.82rem;
