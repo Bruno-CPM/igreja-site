@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
-import ArchDivider from '../components/ArchDivider';
 import { getEventos, getPregacoes } from '../services/api';
 import './Home.css';
 
@@ -46,8 +45,6 @@ export default function Home() {
         </div>
       </section>
 
-      <ArchDivider tone="gold" />
-
       <section className="section">
         <div className="container home-intro">
           <Reveal as="div">
@@ -75,8 +72,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ArchDivider tone="gold" />
 
       <section className="section section-alt">
         <div className="container">

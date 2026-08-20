@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Reveal from '../components/Reveal';
-import ArchDivider from '../components/ArchDivider';
 import { enviarContato } from '../services/api';
 import './PageShared.css';
 import './Contato.css';
@@ -41,8 +40,6 @@ export default function Contato() {
           </Reveal>
         </div>
       </section>
-
-      <ArchDivider />
 
       <section className="section">
         <div className="container contato-grid">
