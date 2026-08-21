@@ -36,7 +36,7 @@ export default function Home() {
         <div className="container hero__grid">
           <div>
             <span className="eyebrow">Sejam bem-vindos</span>
-            <h1>Um lugar para encontrar fé, família e propósito</h1>
+            <h1>Conservando a unidade do espírito pelo vínculo da paz</h1>
             <p className="hero__lead">
               Acompanhe nossos cultos, eventos e pregações, e conheça a comunidade
               que celebra e serve junto, toda semana.
