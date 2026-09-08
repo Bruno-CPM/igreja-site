@@ -1,0 +1,20 @@
+{
+  "name": "igreja-site-api",
+  "version": "1.0.0",
+  "description": "API do site institucional da igreja (Node.js / Express / Sequelize)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^7.2.0",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
