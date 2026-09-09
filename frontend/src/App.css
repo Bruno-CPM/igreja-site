@@ -2,5 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* Degradê único do topo (preto, no header) até o rodapé (azul royal) */
+  background: var(--page-gradient, linear-gradient(180deg, #060608 0%, #0d1330 32%, #16247a 68%, #2547bd 100%));
+  color: var(--ink);
 }
 main { flex: 1; }
