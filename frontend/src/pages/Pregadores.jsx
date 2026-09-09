@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Reveal from '../components/Reveal';
-import ArchDivider from '../components/ArchDivider';
 import { getPregadores } from '../services/api';
 import './PageShared.css';
 
@@ -33,8 +32,6 @@ export default function Pregadores() {
           </Reveal>
         </div>
       </section>
-
-      <ArchDivider />
 
       <section className="section">
         <div className="container">

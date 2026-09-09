@@ -2,11 +2,11 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(16, 26, 44, 0.92);
+  background: rgba(6, 6, 8, 0.82);
   backdrop-filter: blur(6px);
   transition: box-shadow 0.3s ease;
 }
-.navbar--scrolled { box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+.navbar--scrolled { box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
 
 .navbar__inner {
   display: flex;
@@ -24,8 +24,11 @@
   font-size: 1.15rem;
   font-weight: 600;
 }
-.navbar__brand svg { color: var(--gold); flex-shrink: 0; }
-.navbar__brand em { font-style: normal; color: var(--gold-soft); margin-left: 4px; }
+.navbar__logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
 .navbar__links {
   display: flex;

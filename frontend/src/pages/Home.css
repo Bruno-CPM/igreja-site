@@ -1,26 +1,34 @@
 .hero {
-  background: radial-gradient(circle at 20% -10%, var(--navy-soft), var(--navy-deep) 60%);
+  position: relative;
+  overflow: hidden;
   color: var(--linen);
-  padding: 96px 0 80px;
-}
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 56px;
+  min-height: min(86vh, 720px);
+  display: flex;
   align-items: center;
 }
-.hero h1 { color: var(--linen); }
-.hero__lead { color: rgba(250,246,236,0.78); max-width: 46ch; font-size: 1.05rem; }
-.hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
-.hero__art {
-  aspect-ratio: 4 / 5;
-  color: var(--gold-soft);
-  flex-direction: column;
-  gap: 14px;
-  text-align: center;
-  padding: 24px;
+.hero__video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
-.hero__art-note { font-size: 0.78rem; color: rgba(228,201,122,0.7); font-style: italic; max-width: 22ch; }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(6,6,8,0.4) 0%, rgba(8,11,26,0.6) 45%, rgba(13,19,48,0.85) 100%);
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  padding: 72px 0;
+}
+.hero h1 { color: var(--linen); }
+.hero__lead { color: rgba(250,246,236,0.82); max-width: 46ch; font-size: 1.05rem; }
+.hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
 .home-intro { text-align: center; }
 .home-intro h2 { max-width: 30ch; margin-left: auto; margin-right: auto; }
@@ -33,7 +41,7 @@
 }
 .home-link-card { padding: 26px; display: block; }
 .home-link-card h3 { margin-bottom: 6px; }
-.home-link-card__arrow { color: var(--brick); font-weight: 600; font-size: 0.88rem; }
+.home-link-card__arrow { color: var(--brick-soft); font-weight: 600; font-size: 0.88rem; }
 
 .event-highlight {
   display: grid;
@@ -44,6 +52,7 @@
 }
 .event-highlight__date {
   background: var(--navy-deep);
+  box-shadow: inset 0 0 0 1px rgba(124, 148, 234, 0.3);
   color: var(--gold-soft);
   border-radius: 50% 50% 4px 4px / 30% 30% 4px 4px;
   aspect-ratio: 4/5;
@@ -69,8 +78,7 @@
 .home-cta-center { text-align: center; margin-top: 40px; }
 
 @media (max-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__art { max-width: 320px; margin: 0 auto; }
+  .hero { min-height: min(70vh, 560px); }
   .home-links, .sermon-preview-grid { grid-template-columns: 1fr; }
   .event-highlight { grid-template-columns: 90px 1fr; }
 }

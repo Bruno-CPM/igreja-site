@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
-import ArchDivider from '../components/ArchDivider';
+import heroVideo from '../assets/hero-capa.mp4';
 import { getEventos, getPregacoes } from '../services/api';
 import './Home.css';
 
@@ -23,30 +23,32 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="container hero__grid">
-          <div>
-            <span className="eyebrow">Sejam bem-vindos</span>
-            <h1>Um lugar para encontrar fé, família e propósito</h1>
-            <p className="hero__lead">
-              Acompanhe nossos cultos, eventos e pregações, e conheça a comunidade
-              que celebra e serve junto, toda semana.
-            </p>
-            <div className="hero__actions">
-              <Link to="/pregacoes" className="btn btn-primary">Assistir pregações</Link>
-              <Link to="/eventos" className="btn btn-outline">Ver próximos eventos</Link>
-            </div>
-          </div>
+        <video
+          className="hero__video-bg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="hero__overlay" aria-hidden="true" />
 
-          <div className="hero__art arch-frame" aria-hidden="true">
-            <svg width="70" height="70" viewBox="0 0 30 30">
-              <path d="M15 2 C6 2 6 12 6 12 V27 H24 V12 C24 12 24 2 15 2 Z" fill="none" stroke="currentColor" strokeWidth="1.4" />
-            </svg>
-            <span className="hero__art-note">[imagem / vídeo institucional a ser fornecido]</span>
+        <div className="container hero__content">
+          <span className="eyebrow">Sejam bem-vindos</span>
+          <h1>Um lugar para encontrar fé, família e propósito</h1>
+          <p className="hero__lead">
+            Acompanhe nossos cultos, eventos e pregações, e conheça a comunidade
+            que celebra e serve junto, toda semana.
+          </p>
+          <div className="hero__actions">
+            <Link to="/pregacoes" className="btn btn-primary">Assistir pregações</Link>
+            <Link to="/eventos" className="btn btn-outline">Ver próximos eventos</Link>
           </div>
         </div>
       </section>
-
-      <ArchDivider tone="gold" />
 
       <section className="section">
         <div className="container home-intro">
@@ -75,8 +77,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ArchDivider tone="gold" />
 
       <section className="section section-alt">
         <div className="container">

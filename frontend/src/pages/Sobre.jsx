@@ -1,5 +1,4 @@
 import Reveal from '../components/Reveal';
-import ArchDivider from '../components/ArchDivider';
 import './PageShared.css';
 
 const VALORES = [
@@ -23,8 +22,6 @@ export default function Sobre() {
           </Reveal>
         </div>
       </section>
-
-      <ArchDivider />
 
       <section className="section">
         <div className="container two-col">
