@@ -36,9 +36,9 @@ export default function Footer() {
         <div>
           <h4>Redes sociais</h4>
           <ul className="footer__list">
-            <li><a href="#" aria-label="Instagram">Instagram</a></li>
-            <li><a href="#" aria-label="YouTube">YouTube</a></li>
-            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+           <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a></li>
+           <li><a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">YouTube</a></li>
+           <li><a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">Facebook</a></li>
           </ul>
         </div>
       </div>
