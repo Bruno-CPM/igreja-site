@@ -1,14 +1,32 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Reveal from '../components/Reveal';
-import { enviarContato } from '../services/api';
+import { enviarContato, enviarLembreteDizimo } from '../services/api';
+import { buildPixPayload } from '../services/pix';
 import './PageShared.css';
 import './Contato.css';
 
 const CAMPOS_INICIAIS = { nome: '', email: '', telefone: '', texto: '' };
+const LEMBRETE_INICIAL = { nome: '', canal: 'email', contato: '', diaPreferido: '5' };
+
+// TODO: substituir pelos dados reais da igreja antes de publicar em produção.
+const PIX_CONFIG = {
+  chave: '', // CPF/CNPJ, e-mail, telefone ou chave aleatória cadastrada no banco
+  nome: 'Vinculo Da Paz',
+  cidade: '',
+};
+
+const VALORES_SUGERIDOS = [50, 100, 200];
+const DIAS_DO_MES = Array.from({ length: 28 }, (_, i) => i + 1);
 
 export default function Contato() {
   const [form, setForm] = useState(CAMPOS_INICIAIS);
   const [status, setStatus] = useState('idle'); // idle | enviando | sucesso | erro
+
+  const [valorDizimo, setValorDizimo] = useState('');
+  const [pixCopiado, setPixCopiado] = useState(false);
+
+  const [lembrete, setLembrete] = useState(LEMBRETE_INICIAL);
+  const [lembreteStatus, setLembreteStatus] = useState('idle'); // idle | enviando | sucesso | erro
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +42,53 @@ export default function Contato() {
       setForm(CAMPOS_INICIAIS);
     } catch {
       setStatus('erro');
+    }
+  };
+
+  const pixConfigurado = Boolean(PIX_CONFIG.chave);
+
+  const codigoPix = useMemo(() => {
+    if (!pixConfigurado) return null;
+    return buildPixPayload({
+      chave: PIX_CONFIG.chave,
+      nome: PIX_CONFIG.nome,
+      cidade: PIX_CONFIG.cidade,
+      valor: valorDizimo,
+    });
+  }, [pixConfigurado, valorDizimo]);
+
+  const handleCopiarPix = async () => {
+    if (!codigoPix) return;
+    try {
+      await navigator.clipboard.writeText(codigoPix);
+      setPixCopiado(true);
+      setTimeout(() => setPixCopiado(false), 2500);
+    } catch {
+      setPixCopiado(false);
+    }
+  };
+
+  const handleLembreteChange = (e) => {
+    const { name, value } = e.target;
+    setLembrete((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(name === 'canal' ? { contato: '' } : {}),
+    }));
+  };
+
+  const handleLembreteSubmit = async (e) => {
+    e.preventDefault();
+    setLembreteStatus('enviando');
+    try {
+      await enviarLembreteDizimo({
+        ...lembrete,
+        diaPreferido: Number(lembrete.diaPreferido),
+      });
+      setLembreteStatus('sucesso');
+      setLembrete(LEMBRETE_INICIAL);
+    } catch {
+      setLembreteStatus('erro');
     }
   };
 
@@ -80,6 +145,123 @@ export default function Contato() {
             <div className="arch-frame media-placeholder">
               <span>[mapa / localização a ser fornecido]</span>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container dizimo-grid">
+          <Reveal className="card dizimo-card">
+            <span className="eyebrow">Contribua com o dízimo</span>
+            <h2>Pix Copia e Cola</h2>
+            <p>
+              Escolha um valor (opcional) e copie o código Pix abaixo para colar diretamente
+              no aplicativo do seu banco.
+            </p>
+
+            {pixConfigurado ? (
+              <>
+                <div className="dizimo-valores">
+                  {VALORES_SUGERIDOS.map((v) => (
+                    <button
+                      key={v}
+                      type="button"
+                      className={`dizimo-valor-chip ${Number(valorDizimo) === v ? 'is-active' : ''}`}
+                      onClick={() => setValorDizimo(String(v))}
+                    >
+                      R$ {v}
+                    </button>
+                  ))}
+                  <label className="dizimo-valor-custom">
+                    R$
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      placeholder="Outro valor"
+                      value={valorDizimo}
+                      onChange={(e) => setValorDizimo(e.target.value)}
+                    />
+                  </label>
+                </div>
+
+                <label className="dizimo-codigo-label">
+                  Código Pix
+                  <textarea className="dizimo-codigo" rows="3" readOnly value={codigoPix} onFocus={(e) => e.target.select()} />
+                </label>
+
+                <button type="button" className="btn btn-primary" onClick={handleCopiarPix}>
+                  {pixCopiado ? 'Código copiado!' : 'Copiar código Pix'}
+                </button>
+              </>
+            ) : (
+              <p className="placeholder-note">[Chave Pix da igreja a ser configurada]</p>
+            )}
+          </Reveal>
+
+          <Reveal delay={100} as="form" className="card dizimo-card" onSubmit={handleLembreteSubmit}>
+            <span className="eyebrow">Não quer esquecer</span>
+            <h2>Lembrete mensal</h2>
+            <p>
+              Cadastre-se para receber um lembrete todo mês, por e-mail ou WhatsApp, na data
+              que você preferir. Não é uma cobrança automática — é só um aviso.
+            </p>
+
+            <label>
+              Nome
+              <input name="nome" value={lembrete.nome} onChange={handleLembreteChange} required />
+            </label>
+
+            <div className="dizimo-canal">
+              <label className="dizimo-canal__option">
+                <input
+                  type="radio"
+                  name="canal"
+                  value="email"
+                  checked={lembrete.canal === 'email'}
+                  onChange={handleLembreteChange}
+                />
+                E-mail
+              </label>
+              <label className="dizimo-canal__option">
+                <input
+                  type="radio"
+                  name="canal"
+                  value="whatsapp"
+                  checked={lembrete.canal === 'whatsapp'}
+                  onChange={handleLembreteChange}
+                />
+                WhatsApp
+              </label>
+            </div>
+
+            <label>
+              {lembrete.canal === 'whatsapp' ? 'Número de WhatsApp' : 'E-mail'}
+              <input
+                type={lembrete.canal === 'whatsapp' ? 'tel' : 'email'}
+                name="contato"
+                placeholder={lembrete.canal === 'whatsapp' ? '(11) 91234-5678' : 'voce@exemplo.com'}
+                value={lembrete.contato}
+                onChange={handleLembreteChange}
+                required
+              />
+            </label>
+
+            <label>
+              Dia do mês preferido
+              <select name="diaPreferido" value={lembrete.diaPreferido} onChange={handleLembreteChange}>
+                {DIAS_DO_MES.map((dia) => (
+                  <option key={dia} value={dia}>Dia {dia}</option>
+                ))}
+              </select>
+            </label>
+
+            <button type="submit" className="btn btn-ghost-dark" disabled={lembreteStatus === 'enviando'}>
+              {lembreteStatus === 'enviando' ? 'Enviando...' : 'Ativar lembrete'}
+            </button>
+
+            {lembreteStatus === 'sucesso' && <p className="form-feedback form-feedback--ok">Lembrete ativado com sucesso!</p>}
+            {lembreteStatus === 'erro' && <p className="form-feedback form-feedback--erro">Não foi possível ativar agora. Tente novamente.</p>}
           </Reveal>
         </div>
       </section>
