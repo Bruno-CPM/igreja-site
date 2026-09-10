@@ -7,6 +7,22 @@
 .page-hero h1 { color: var(--linen); margin-bottom: 0.3em; }
 .page-hero .placeholder-note { color: rgba(250,246,236,0.65); max-width: 60ch; }
 
+.page-hero--photo {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding: 108px 0 84px;
+}
+.page-hero--photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(6,6,8,0.55) 0%, rgba(8,11,26,0.68) 45%, rgba(13,19,48,0.9) 100%);
+}
+.page-hero--photo .container { position: relative; z-index: 1; }
+
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;

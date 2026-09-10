@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Reveal from '../components/Reveal';
 import { getPregacoes } from '../services/api';
+import heroPregacoes from '../assets/hero-pregacoes.jpeg';
 import './PageShared.css';
 
 export default function Pregacoes() {
@@ -27,7 +28,7 @@ export default function Pregacoes() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--photo" style={{ backgroundImage: `url(${heroPregacoes})` }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow">Palavra semanal</span>

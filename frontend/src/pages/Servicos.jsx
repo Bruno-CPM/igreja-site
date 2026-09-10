@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Reveal from '../components/Reveal';
 import { getServicos } from '../services/api';
+import heroServicos from '../assets/hero-servicos.jpeg';
 import './PageShared.css';
 
 export default function Servicos() {
@@ -17,7 +18,7 @@ export default function Servicos() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--photo" style={{ backgroundImage: `url(${heroServicos})` }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow">O que oferecemos</span>

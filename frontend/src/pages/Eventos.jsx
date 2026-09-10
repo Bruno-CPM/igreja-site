@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Reveal from '../components/Reveal';
 import { getEventos } from '../services/api';
+import heroEventos from '../assets/hero-eventos.jpeg';
 import './PageShared.css';
 
 export default function Eventos() {
@@ -20,7 +21,7 @@ export default function Eventos() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--photo" style={{ backgroundImage: `url(${heroEventos})` }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow">Agenda da igreja</span>

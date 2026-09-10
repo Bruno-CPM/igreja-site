@@ -1,4 +1,5 @@
 import Reveal from '../components/Reveal';
+import heroSobre from '../assets/hero-sobre.jpeg';
 import './PageShared.css';
 
 const VALORES = [
@@ -11,7 +12,7 @@ const VALORES = [
 export default function Sobre() {
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--photo" style={{ backgroundImage: `url(${heroSobre})` }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow">Quem somos</span>
