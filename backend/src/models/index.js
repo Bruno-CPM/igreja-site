@@ -4,6 +4,7 @@ const Servico = require('./Servico');
 const Pregador = require('./Pregador');
 const Pregacao = require('./Pregacao');
 const Mensagem = require('./Mensagem');
+const LembreteDizimo = require('./LembreteDizimo');
 
 // Equivalente ao @ManyToOne de Pregacao -> Pregador
 Pregador.hasMany(Pregacao, { foreignKey: 'pregadorId', as: 'pregacoes' });
@@ -16,4 +17,5 @@ module.exports = {
   Pregador,
   Pregacao,
   Mensagem,
+  LembreteDizimo,
 };

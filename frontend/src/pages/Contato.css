@@ -50,3 +50,106 @@
 @media (max-width: 900px) {
   .contato-grid { grid-template-columns: 1fr; }
 }
+
+.dizimo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.dizimo-card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.dizimo-card h2 { margin: 0; }
+.dizimo-card > .btn { align-self: flex-start; }
+
+.dizimo-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.dizimo-card input,
+.dizimo-card select,
+.dizimo-card textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  resize: vertical;
+}
+.dizimo-card input::placeholder,
+.dizimo-card textarea::placeholder {
+  color: rgba(245, 242, 234, 0.45);
+}
+.dizimo-card input:focus,
+.dizimo-card select:focus,
+.dizimo-card textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(65,105,225,0.25);
+}
+
+.dizimo-valores {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.dizimo-valor-chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.dizimo-valor-chip.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy-deep);
+}
+.dizimo-valor-custom {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+  font-size: 0.9rem;
+}
+.dizimo-valor-custom input {
+  width: 110px;
+  padding: 8px 10px;
+}
+
+.dizimo-codigo-label { gap: 6px; }
+.dizimo-codigo {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  word-break: break-all;
+}
+
+.dizimo-canal {
+  display: flex;
+  gap: 20px;
+}
+.dizimo-canal__option {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+  font-weight: 500 !important;
+}
+.dizimo-canal__option input { width: auto; padding: 0; accent-color: var(--gold); }
+
+@media (max-width: 900px) {
+  .dizimo-grid { grid-template-columns: 1fr; }
+}

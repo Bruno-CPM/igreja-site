@@ -22,4 +22,7 @@ export const getServicos = () =>
 export const enviarContato = (dados) =>
   api.post('/contato', dados).then((res) => res.data);
 
+export const enviarLembreteDizimo = (dados) =>
+  api.post('/dizimo/lembrete', dados).then((res) => res.data);
+
 export default api;
