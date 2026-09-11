@@ -1,29 +1,4 @@
-.section.contato-form-section { padding-top: 8px; }
-
-.contato-quick-info {
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line-on-dark);
-}
-.contato-quick-info__item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  color: var(--linen);
-}
-.contato-quick-info__label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gold-soft);
-}
-.contato-quick-info__item a { color: var(--linen); transition: color 0.2s ease; }
-.contato-quick-info__item a:hover { color: var(--gold-soft); }
-
+.contato-form-section { padding-top: 32px; }
 .contato-grid {
   display: flex;
   justify-content: center;

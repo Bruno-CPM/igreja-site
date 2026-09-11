@@ -38,21 +38,6 @@ export default function Contato() {
               Envie sua mensagem, dúvida ou pedido de oração. Responderemos em breve.
             </p>
           </Reveal>
-
-          <Reveal delay={80} className="contato-quick-info">
-            <div className="contato-quick-info__item">
-              <span className="contato-quick-info__label">Endereço</span>
-              <span>QS 304 - Samambaia, Brasília - DF, 72306-503</span>
-            </div>
-            <div className="contato-quick-info__item">
-              <span className="contato-quick-info__label">Telefone</span>
-              <a href="https://wa.me/5561999674458" target="_blank" rel="noreferrer">(61) 99967-4458</a>
-            </div>
-            <div className="contato-quick-info__item">
-              <span className="contato-quick-info__label">Instagram</span>
-              <a href="https://www.instagram.com/vinculodapaz" target="_blank" rel="noreferrer">@vinculodapaz</a>
-            </div>
-          </Reveal>
         </div>
       </section>
 
