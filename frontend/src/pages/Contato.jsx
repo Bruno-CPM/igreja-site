@@ -132,19 +132,6 @@ export default function Contato() {
             {status === 'sucesso' && <p className="form-feedback form-feedback--ok">Mensagem enviada com sucesso!</p>}
             {status === 'erro' && <p className="form-feedback form-feedback--erro">Não foi possível enviar agora. Tente novamente.</p>}
           </Reveal>
-
-          <Reveal delay={100} className="contato-info">
-            <h2>Outras formas de contato</h2>
-            <ul className="footer__list contato-info__list">
-              <li><strong>Endereço:</strong> [a definir]</li>
-              <li><strong>Telefone:</strong> [a definir]</li>
-              <li><strong>E-mail:</strong> [a definir]</li>
-              <li><strong>Horários de culto:</strong> [a definir]</li>
-            </ul>
-            <div className="arch-frame media-placeholder">
-              <span>[mapa / localização a ser fornecido]</span>
-            </div>
-          </Reveal>
         </div>
       </section>
 
