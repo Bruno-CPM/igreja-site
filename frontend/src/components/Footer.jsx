@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <img src={logo} alt="Vínculo da Paz" className="footer__logo" />
           <p className="footer__text">
-            Um lugar para celebrar a fé, fortalecer a família e servir a comunidade.
+            Conservando a unidade do Espirito pelo Vinculo da Paz
           </p>
         </div>
 
