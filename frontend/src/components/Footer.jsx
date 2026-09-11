@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import logo from '../assets/logo-vinculo-da-paz.png';
 import './Footer.css';
 
@@ -11,17 +10,6 @@ export default function Footer() {
           <p className="footer__text">
             Conservando a unidade do Espirito pelo Vinculo da Paz
           </p>
-        </div>
-
-        <div>
-          <h4>Navegação</h4>
-          <ul className="footer__list">
-            <li><Link to="/sobre">Sobre a igreja</Link></li>
-            <li><Link to="/servicos">Serviços</Link></li>
-            <li><Link to="/eventos">Eventos</Link></li>
-            <li><Link to="/pregacoes">Pregações</Link></li>
-            <li><Link to="/pregadores">Pregadores</Link></li>
-          </ul>
         </div>
 
         <div>
