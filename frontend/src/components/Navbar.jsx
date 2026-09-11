@@ -10,6 +10,7 @@ const LINKS = [
   { to: '/eventos', label: 'Eventos' },
   { to: '/pregacoes', label: 'Pregações' },
   { to: '/pregadores', label: 'Pregadores' },
+  { to: '/contribuicao', label: 'Contribuição' },
   { to: '/contato', label: 'Contato' },
 ];
 
