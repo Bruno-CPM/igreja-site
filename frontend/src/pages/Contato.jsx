@@ -105,7 +105,7 @@ export default function Contato() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section contato-form-section">
         <div className="container contato-grid">
           <Reveal as="form" className="card contato-form" onSubmit={handleSubmit}>
             <label>
@@ -136,7 +136,13 @@ export default function Contato() {
       </section>
 
       <section className="section section-alt">
-        <div className="container dizimo-grid">
+        <div className="container">
+          <Reveal>
+            <span className="eyebrow">Apoie a igreja</span>
+            <h2>Gostaria de contribuir?</h2>
+          </Reveal>
+
+          <div className="dizimo-grid">
           <Reveal className="card dizimo-card">
             <span className="eyebrow">Contribua com o dízimo</span>
             <h2>Pix Copia e Cola</h2>
@@ -249,6 +255,7 @@ export default function Contato() {
             {lembreteStatus === 'sucesso' && <p className="form-feedback form-feedback--ok">Lembrete ativado com sucesso!</p>}
             {lembreteStatus === 'erro' && <p className="form-feedback form-feedback--erro">Não foi possível ativar agora. Tente novamente.</p>}
           </Reveal>
+          </div>
         </div>
       </section>
     </>

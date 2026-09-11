@@ -1,3 +1,4 @@
+.contato-form-section { padding-top: 32px; }
 .contato-grid {
   display: flex;
   justify-content: center;
@@ -45,6 +46,7 @@
 .form-feedback--erro { color: var(--brick-soft); }
 
 .dizimo-grid {
+  margin-top: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
