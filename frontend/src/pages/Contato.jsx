@@ -8,11 +8,10 @@ import './Contato.css';
 const CAMPOS_INICIAIS = { nome: '', email: '', telefone: '', texto: '' };
 const LEMBRETE_INICIAL = { nome: '', canal: 'email', contato: '', diaPreferido: '5' };
 
-// TODO: substituir pelos dados reais da igreja antes de publicar em produção.
 const PIX_CONFIG = {
-  chave: '', // CPF/CNPJ, e-mail, telefone ou chave aleatória cadastrada no banco
-  nome: 'Vinculo Da Paz',
-  cidade: '',
+  chave: '08366083000149', // CNPJ da Comunidade Crista Apostolica Vinculo da Paz
+  nome: 'Comunidade Crista Apostolica Vinculo da Paz',
+  cidade: 'Brasilia',
 };
 
 const VALORES_SUGERIDOS = [50, 100, 200];
