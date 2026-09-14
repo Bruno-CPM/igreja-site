@@ -15,18 +15,17 @@ export default function Footer() {
         <div>
           <h4>Contato</h4>
           <ul className="footer__list">
-            <li>Endereço: [a definir]</li>
-            <li>Telefone: [a definir]</li>
-            <li>E-mail: [a definir]</li>
+            <li>Endereço: QS 304, Conjunto 2, Lote 8, Samambaia, Brasília - DF</li>
+            <li>Telefone: (61) 99967-4458</li>
+            <li>E-mail: ccvinculodapazdml@gmail.com</li>
           </ul>
         </div>
 
         <div>
           <h4>Redes sociais</h4>
           <ul className="footer__list">
-           <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a></li>
-           <li><a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">YouTube</a></li>
-           <li><a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">Facebook</a></li>
+           <li><a href="https://www.instagram.com/vinculodapaz/" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a></li>
+           <li><a href="https://www.youtube.com/@vinculodapaz" target="_blank" rel="noreferrer" aria-label="YouTube">YouTube</a></li>
           </ul>
         </div>
       </div>
