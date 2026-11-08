@@ -9,7 +9,7 @@ import './PageShared.css';
 // Vídeos curtos em destaque. Para incluir outro, adicione um item aqui.
 const VIDEOS_DESTAQUE = [
   { src: videoDestaque, legenda: 'BI Deuzenir – É preciso voltar' },
-  { src: videoDestaque2, legenda: '' },
+  { src: videoDestaque2, legenda: 'PR Isabela – O plano de Deus' },
 ];
 
 // Vídeo que toca ao passar o mouse e para (voltando ao início) ao tirar o mouse.
