@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Reveal from '../components/Reveal';
 import { getPregacoes } from '../services/api';
 import heroPregacoes from '../assets/hero-pregacoes.jpeg';
+import videoDestaque from '../assets/pregacao-destaque.mp4';
 import './PageShared.css';
 
 export default function Pregacoes() {
@@ -42,6 +43,18 @@ export default function Pregacoes() {
 
       <section className="section">
         <div className="container">
+          <Reveal>
+            <div className="sermon-highlight">
+              <video
+                className="sermon-highlight__video"
+                src={videoDestaque}
+                controls
+                playsInline
+                preload="metadata"
+              />
+            </div>
+          </Reveal>
+
           {temas.length > 1 && (
             <div className="filter-row">
               {temas.map((tema) => (
