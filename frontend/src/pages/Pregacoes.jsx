@@ -105,7 +105,6 @@ export default function Pregacoes() {
           )}
 
           {carregando && <p className="placeholder-note" style={{ marginTop: 24 }}>Carregando pregações...</p>}
-          {erro && <p className="placeholder-note" style={{ marginTop: 24 }}>Não foi possível carregar as pregações agora.</p>}
 
           {!carregando && !erro && filtradas.length === 0 && (
             <div className="empty-state"><p>Nenhuma pregação encontrada.</p></div>
