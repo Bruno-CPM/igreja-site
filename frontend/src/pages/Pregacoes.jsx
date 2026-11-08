@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Reveal from '../components/Reveal';
 import { getPregacoes } from '../services/api';
 import heroPregacoes from '../assets/hero-pregacoes.jpeg';
@@ -10,6 +10,34 @@ export default function Pregacoes() {
   const [temaAtivo, setTemaAtivo] = useState('Todos');
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(false);
+  const videoRef = useRef(null);
+
+  // Toca com som ao passar o mouse; se o navegador bloquear o som, toca sem som.
+  const iniciarVideo = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.play().catch(() => {
+      v.muted = true;
+      v.play().catch(() => {});
+    });
+  };
+
+  // Ao tirar o mouse, para o vídeo e volta ao início.
+  const pararVideo = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.pause();
+    v.currentTime = 0;
+  };
+
+  // No celular não existe "passar o mouse": um toque inicia ou para.
+  const alternarVideo = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) iniciarVideo();
+    else pararVideo();
+  };
 
   useEffect(() => {
     getPregacoes()
@@ -46,11 +74,15 @@ export default function Pregacoes() {
           <Reveal>
             <div className="sermon-highlight">
               <video
+                ref={videoRef}
                 className="sermon-highlight__video"
                 src={videoDestaque}
-                controls
                 playsInline
                 preload="metadata"
+                onMouseEnter={iniciarVideo}
+                onMouseLeave={pararVideo}
+                onTouchStart={alternarVideo}
+                onEnded={pararVideo}
               />
             </div>
           </Reveal>

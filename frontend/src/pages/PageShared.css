@@ -106,12 +106,13 @@
 
 .sermon-highlight {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 8px 0 32px;
 }
 .sermon-highlight__video {
   width: 100%;
-  max-width: 360px;
+  max-width: 260px;
+  cursor: pointer;
   aspect-ratio: 9 / 16;
   border-radius: var(--radius);
   background: #000;
