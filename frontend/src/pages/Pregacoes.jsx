@@ -4,12 +4,16 @@ import { getPregacoes } from '../services/api';
 import heroPregacoes from '../assets/hero-pregacoes.jpeg';
 import videoDestaque from '../assets/pregacao-destaque.mp4';
 import videoDestaque2 from '../assets/pregacao-destaque-2.mp4';
+import videoDestaque3 from '../assets/pregacao-destaque-3.mp4';
+import videoDestaque4 from '../assets/pregacao-destaque-4.mp4';
 import './PageShared.css';
 
 // Vídeos curtos em destaque. Para incluir outro, adicione um item aqui.
 const VIDEOS_DESTAQUE = [
   { src: videoDestaque, legenda: 'BI Deuzenir – É preciso voltar' },
   { src: videoDestaque2, legenda: 'PR Isabela – O plano de Deus' },
+  { src: videoDestaque3, legenda: '' },
+  { src: videoDestaque4, legenda: '' },
 ];
 
 // Vídeo que toca ao passar o mouse e para (voltando ao início) ao tirar o mouse.
