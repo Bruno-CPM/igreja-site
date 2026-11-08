@@ -72,7 +72,7 @@ export default function Pregacoes() {
       <section className="section">
         <div className="container">
           <Reveal>
-            <div className="sermon-highlight">
+            <figure className="sermon-highlight">
               <video
                 ref={videoRef}
                 className="sermon-highlight__video"
@@ -84,7 +84,10 @@ export default function Pregacoes() {
                 onTouchStart={alternarVideo}
                 onEnded={pararVideo}
               />
-            </div>
+              <figcaption className="sermon-highlight__caption">
+                BI Deuzenir – É preciso voltar
+              </figcaption>
+            </figure>
           </Reveal>
 
           {temas.length > 1 && (
