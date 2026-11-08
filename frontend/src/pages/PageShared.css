@@ -107,7 +107,8 @@
 .sermon-highlight-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  /* 4 x 260px + 3 x 24px = 1112px: cabem os quatro vídeos lado a lado na largura do site */
+  gap: 24px;
   justify-content: flex-start;
   margin: 8px 0 32px;
 }
