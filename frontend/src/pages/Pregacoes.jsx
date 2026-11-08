@@ -3,17 +3,21 @@ import Reveal from '../components/Reveal';
 import { getPregacoes } from '../services/api';
 import heroPregacoes from '../assets/hero-pregacoes.jpeg';
 import videoDestaque from '../assets/pregacao-destaque.mp4';
+import videoDestaque2 from '../assets/pregacao-destaque-2.mp4';
 import './PageShared.css';
 
-export default function Pregacoes() {
-  const [pregacoes, setPregacoes] = useState([]);
-  const [temaAtivo, setTemaAtivo] = useState('Todos');
-  const [carregando, setCarregando] = useState(true);
-  const [erro, setErro] = useState(false);
+// Vídeos curtos em destaque. Para incluir outro, adicione um item aqui.
+const VIDEOS_DESTAQUE = [
+  { src: videoDestaque, legenda: 'BI Deuzenir – É preciso voltar' },
+  { src: videoDestaque2, legenda: '' },
+];
+
+// Vídeo que toca ao passar o mouse e para (voltando ao início) ao tirar o mouse.
+function VideoDestaque({ src, legenda }) {
   const videoRef = useRef(null);
 
-  // Toca com som ao passar o mouse; se o navegador bloquear o som, toca sem som.
-  const iniciarVideo = () => {
+  // Toca com som; se o navegador bloquear o som, toca sem som.
+  const iniciar = () => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = false;
@@ -23,8 +27,7 @@ export default function Pregacoes() {
     });
   };
 
-  // Ao tirar o mouse, para o vídeo e volta ao início.
-  const pararVideo = () => {
+  const parar = () => {
     const v = videoRef.current;
     if (!v) return;
     v.pause();
@@ -32,13 +35,36 @@ export default function Pregacoes() {
   };
 
   // No celular não existe "passar o mouse": um toque inicia ou para.
-  const alternarVideo = () => {
+  const alternar = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) iniciarVideo();
-    else pararVideo();
+    if (v.paused) iniciar();
+    else parar();
   };
 
+  return (
+    <figure className="sermon-highlight">
+      <video
+        ref={videoRef}
+        className="sermon-highlight__video"
+        src={src}
+        playsInline
+        preload="metadata"
+        onMouseEnter={iniciar}
+        onMouseLeave={parar}
+        onTouchStart={alternar}
+        onEnded={parar}
+      />
+      {legenda && <figcaption className="sermon-highlight__caption">{legenda}</figcaption>}
+    </figure>
+  );
+}
+
+export default function Pregacoes() {
+  const [pregacoes, setPregacoes] = useState([]);
+  const [temaAtivo, setTemaAtivo] = useState('Todos');
+  const [carregando, setCarregando] = useState(true);
+  const [erro, setErro] = useState(false);
   useEffect(() => {
     getPregacoes()
       .then(setPregacoes)
@@ -71,24 +97,13 @@ export default function Pregacoes() {
 
       <section className="section">
         <div className="container">
-          <Reveal>
-            <figure className="sermon-highlight">
-              <video
-                ref={videoRef}
-                className="sermon-highlight__video"
-                src={videoDestaque}
-                playsInline
-                preload="metadata"
-                onMouseEnter={iniciarVideo}
-                onMouseLeave={pararVideo}
-                onTouchStart={alternarVideo}
-                onEnded={pararVideo}
-              />
-              <figcaption className="sermon-highlight__caption">
-                BI Deuzenir – É preciso voltar
-              </figcaption>
-            </figure>
-          </Reveal>
+          <div className="sermon-highlight-row">
+            {VIDEOS_DESTAQUE.map((video, i) => (
+              <Reveal key={i} delay={i * 90}>
+                <VideoDestaque src={video.src} legenda={video.legenda} />
+              </Reveal>
+            ))}
+          </div>
 
           {temas.length > 1 && (
             <div className="filter-row">

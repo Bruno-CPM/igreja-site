@@ -104,10 +104,17 @@
 .event-card__body, .preacher-card__body { padding: 20px; }
 .event-card__date { font-weight: 700; color: var(--brick-soft); font-size: 0.85rem; margin-bottom: 6px; display: block; }
 
+.sermon-highlight-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: flex-start;
+  margin: 8px 0 32px;
+}
+.sermon-highlight-row > * { width: 260px; max-width: 100%; }
 .sermon-highlight {
   width: 100%;
-  max-width: 260px;
-  margin: 8px 0 32px;
+  margin: 0;
 }
 .sermon-highlight__video {
   display: block;
