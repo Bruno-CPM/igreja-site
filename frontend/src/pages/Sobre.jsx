@@ -28,7 +28,10 @@ export default function Sobre() {
         <div className="container two-col">
           <Reveal>
             <h2>Nossa missão</h2>
-            <p className="placeholder-note">[Texto da missão a ser fornecido.]</p>
+            <p>
+              Ser uma comunidade em Samambaia onde pessoas diferentes vivem como um só corpo em
+              Cristo, preservando a unidade do Espírito pelo vínculo da paz.
+            </p>
           </Reveal>
           <Reveal delay={100}>
             <h2>Nossa visão</h2>
