@@ -36,10 +36,8 @@ export default function Sobre() {
           <Reveal delay={100}>
             <h2>Nossa visão</h2>
             <p>
-              Firmados em Efésios 4.1–6, sonhamos com uma igreja unida — um só corpo, um só Espírito
-              e uma só fé —, onde a comunhão vem antes das diferenças. Queremos viver a paz em
-              relacionamentos reconciliados, marcados pelo perdão e livres de disputas, fofocas e
-              amargura. Desejamos servir uns aos outros com humildade e mansidão, sem buscar posição,
+              Firmados em Efésios 4.1–6, nossa visão é uma igreja unida — um só corpo, um só Espírito
+              e uma só fé —, onde a comunhão vem antes das diferenças. Desejamos servir uns aos outros com humildade e mansidão, sem buscar posição,
               e suportar uns aos outros em amor, com paciência, acolhendo cada pessoa no seu
               processo. Buscamos uma vida de igreja vivida em família, não apenas no culto de
               domingo, e uma fé que se traduz em caráter e prática diária: uma vida digna do chamado
