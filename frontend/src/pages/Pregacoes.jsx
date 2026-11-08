@@ -12,8 +12,8 @@ import './PageShared.css';
 const VIDEOS_DESTAQUE = [
   { src: videoDestaque, legenda: 'BI Deuzenir – É preciso voltar' },
   { src: videoDestaque2, legenda: 'PR Isabela – O plano de Deus' },
-  { src: videoDestaque3, legenda: 'PR Andre – O Avivamento' },
-  { src: videoDestaque4, legenda: 'BI Eduardo – Praticante da Palavra' },
+  { src: videoDestaque3, legenda: 'BI Eduardo – Praticante da Palavra' },
+  { src: videoDestaque4, legenda: 'PR Andre – O Avivamento' },
 ];
 
 // Vídeo que toca ao passar o mouse e para (voltando ao início) ao tirar o mouse.
