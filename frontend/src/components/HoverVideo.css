@@ -22,9 +22,9 @@
   height: 100%;
   object-fit: cover;
 }
-/* Com capa, o quadro segue o formato da arte (4:5) e o vídeo é recortado para caber. */
-.hover-video--capa .hover-video__frame { aspect-ratio: 4 / 5; }
-.hover-video--capa .hover-video__video { object-position: center 60%; }
+/* Arte de evento (4:5): o quadro segue o formato da arte e o vídeo é recortado para caber. */
+.hover-video--arte .hover-video__frame { aspect-ratio: 4 / 5; }
+.hover-video--arte .hover-video__video { object-position: center 60%; }
 .hover-video__capa {
   position: absolute;
   inset: 0;

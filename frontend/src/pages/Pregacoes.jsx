@@ -5,6 +5,7 @@ import { getPregacoes } from '../services/api';
 import heroPregacoes from '../assets/hero-pregacoes.jpeg';
 import videoDestaque from '../assets/pregacao-destaque.mp4';
 import videoDestaque2 from '../assets/pregacao-destaque-2.mp4';
+import capaDestaque2 from '../assets/pregacao-destaque-2-capa.jpg';
 import videoDestaque3 from '../assets/pregacao-destaque-3.mp4';
 import videoDestaque4 from '../assets/pregacao-destaque-4.mp4';
 import './PageShared.css';
@@ -12,7 +13,7 @@ import './PageShared.css';
 // Vídeos curtos em destaque. Para incluir outro, adicione um item aqui.
 const VIDEOS_DESTAQUE = [
   { src: videoDestaque, legenda: 'BI Deuzenir – É preciso voltar' },
-  { src: videoDestaque2, legenda: 'PR Isabela – O plano de Deus' },
+  { src: videoDestaque2, capa: capaDestaque2, legenda: 'PR Isabela – O plano de Deus' },
   { src: videoDestaque3, legenda: 'BI Eduardo – Praticante da Palavra' },
   { src: videoDestaque4, legenda: 'PR Andre – O Avivamento' },
 ];
@@ -57,7 +58,7 @@ export default function Pregacoes() {
           <div className="sermon-highlight-row">
             {VIDEOS_DESTAQUE.map((video, i) => (
               <Reveal key={i} delay={i * 90}>
-                <HoverVideo src={video.src} legenda={video.legenda} />
+                <HoverVideo src={video.src} capa={video.capa} capaAlt={video.legenda} legenda={video.legenda} />
               </Reveal>
             ))}
           </div>
