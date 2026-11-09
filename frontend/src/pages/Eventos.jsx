@@ -154,7 +154,7 @@ export default function Eventos() {
                 <p>Em breve você verá aqui os eventos que a igreja já realizou.</p>
               </div>
             ) : (
-              <div className="grid-3">
+              <div className="grid-2">
                 {realizados.map((ev, i) => (
                   <Reveal key={ev.id} delay={(i % 3) * 90}>
                     <CartaoEvento ev={ev} />
@@ -172,16 +172,28 @@ export default function Eventos() {
 function CartaoEvento({ ev }) {
   return (
     <div className="card event-card">
-      {ev.capa && (
-        <div className="event-card__img">
-          <img src={ev.capa} alt={ev.titulo} />
-        </div>
+      {ev.video ? (
+        <HoverVideo
+          src={ev.video}
+          capa={ev.capa}
+          capaAlt={ev.titulo}
+          className={ev.formato === 'horizontal' ? 'hover-video--horizontal' : ''}
+        />
+      ) : (
+        ev.capa && (
+          <div className="event-card__img">
+            <img src={ev.capa} alt={ev.titulo} />
+          </div>
+        )
       )}
       <div className="event-card__body">
         <span className="event-card__date">{formatarData(ev)}</span>
         <h3>{ev.titulo}</h3>
         {ev.convidado && <p className="sermon-list-card__meta">com {ev.convidado}</p>}
-        <p className="sermon-list-card__meta">{ev.local}{ev.horario ? ` · ${ev.horario}` : ''}</p>
+        {(ev.local || ev.horario) && (
+          <p className="sermon-list-card__meta">{[ev.local, ev.horario].filter(Boolean).join(' · ')}</p>
+        )}
+        {ev.descricao && <p>{ev.descricao}</p>}
       </div>
     </div>
   );

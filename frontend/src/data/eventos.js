@@ -1,5 +1,7 @@
 import rotaVideo from '../assets/evento-rota-dos-adoradores.mp4';
 import rotaCapa from '../assets/evento-rota-dos-adoradores-capa.jpg';
+import expoVideo from '../assets/evento-expo-gospel-2025.mp4';
+import expoCapa from '../assets/evento-expo-gospel-2025-capa.jpg';
 
 // Agenda de eventos da igreja.
 // Para incluir um evento, adicione um item nesta lista.
@@ -16,6 +18,19 @@ export const EVENTOS = [
     descricao: 'Uma noite de adoração na Vínculo da Paz com Mateus Brito.',
     video: rotaVideo,
     capa: rotaCapa,
+  },
+  {
+    id: 'expo-gospel-2025',
+    titulo: 'Expo Gospel',
+    convidado: '',
+    data: '2025-09-05',
+    horario: '',
+    local: '',
+    endereco: '',
+    descricao: '',
+    video: expoVideo,
+    capa: expoCapa,
+    formato: 'horizontal', // vídeo deitado (16:9)
   },
 ];
 

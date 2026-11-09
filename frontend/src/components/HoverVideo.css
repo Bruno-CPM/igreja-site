@@ -48,3 +48,9 @@
   .hover-video__capa { transition: none; }
   .hover-video__frame:hover { transform: none; }
 }
+/* Vídeo deitado (16:9), ex.: trailers de eventos já realizados. */
+.hover-video--horizontal .hover-video__frame { aspect-ratio: 16 / 9; }
+.hover-video--horizontal .hover-video__video { object-position: center; }
+/* Dentro de um card, o vídeo encosta nas bordas e não "salta". */
+.event-card .hover-video__frame { border-radius: 0; box-shadow: none; }
+.event-card .hover-video__frame:hover { transform: none; box-shadow: none; }
