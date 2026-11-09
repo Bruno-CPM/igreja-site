@@ -3,6 +3,8 @@ import heroSobre from '../assets/hero-sobre.jpeg';
 import './PageShared.css';
 import fachadaAntiga from '../assets/igreja-fachada-antiga.jpg';
 import cultoAntigo from '../assets/igreja-culto-antigo.jpg';
+import adoracao from '../assets/igreja-adoracao.jpg';
+import fachadaAtual from '../assets/igreja-fachada-atual.jpg';
 
 const VALORES = [
   { titulo: 'Fé', texto: '[texto a ser fornecido]' },
@@ -71,6 +73,8 @@ export default function Sobre() {
           <Reveal className="church-photos">
             <img src={fachadaAntiga} alt="Fachada antiga da igreja Vínculo da Paz" />
             <img src={cultoAntigo} alt="Culto de louvor na igreja Vínculo da Paz" />
+            <img src={adoracao} alt="Momento de adoração na igreja Vínculo da Paz" />
+            <img src={fachadaAtual} alt="Fachada atual da igreja Vínculo da Paz" />
           </Reveal>
           <Reveal delay={100}>
             <span className="eyebrow">Nossa história</span>
