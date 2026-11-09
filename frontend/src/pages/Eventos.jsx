@@ -40,7 +40,7 @@ function EventoDestaque({ ev }) {
         ) : (
           ev.capa && <img className="event-feature__capa" src={ev.capa} alt={`Arte do evento ${ev.titulo}`} />
         )}
-        {ev.video && <p className="event-feature__hint">Passe o mouse sobre a arte (ou toque, no celular) para ver o vídeo</p>}
+        {ev.descricao && <p className="event-feature__hint">{ev.descricao}</p>}
       </div>
 
       <div className="event-feature__info card">
@@ -61,7 +61,6 @@ function EventoDestaque({ ev }) {
           <li><strong>Local:</strong> {ev.local}</li>
           {ev.endereco && <li><strong>Endereço:</strong> {ev.endereco}</li>}
         </ul>
-        {ev.descricao && <p>{ev.descricao}</p>}
 
         {ev.endereco && (
           <>
