@@ -28,11 +28,8 @@ export default function Sobre() {
           <Reveal>
             <h2>Nossa missão</h2>
             <p>
-              Conduzir cada pessoa ao encontro com Jesus Cristo, o único e suficiente Senhor e
-              Salvador, ensinando-a a guardar tudo o que Ele ordenou. Fazemos isso pela pregação fiel
-              das Escrituras, pelo discipulado que gera transformação de vida, pela adoração em
-              Espírito e em verdade e pelo cuidado do corpo de Cristo, conservando a unidade do
-              Espírito pelo vínculo da paz (Efésios 4:3).
+              Ser uma comunidade em Samambaia onde pessoas diferentes vivem como um só corpo em
+              Cristo, preservando a unidade do Espírito pelo vínculo da paz.
             </p>
           </Reveal>
           <Reveal delay={100}>
