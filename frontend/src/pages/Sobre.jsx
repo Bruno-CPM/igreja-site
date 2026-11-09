@@ -69,7 +69,7 @@ export default function Sobre() {
       </section>
 
       <section className="section">
-        <div className="container two-col">
+        <div className="container two-col history-layout">
           <Reveal className="church-photos">
             <img src={fachadaAntiga} alt="Fachada antiga da igreja Vínculo da Paz" />
             <img src={cultoAntigo} alt="Culto de louvor na igreja Vínculo da Paz" />

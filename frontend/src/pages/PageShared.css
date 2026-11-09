@@ -263,3 +263,24 @@
   font-size: 1.3rem;
   color: var(--linen);
 }
+
+/* Fotos da história acompanham a altura do texto ao lado (computador). */
+.history-layout { align-items: stretch; }
+.history-layout .church-photos {
+  contain: size;            /* as fotos não ditam a altura: quem dita é o texto */
+  height: 100%;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+.history-layout .church-photos img {
+  height: 100%;
+  aspect-ratio: auto;
+}
+@media (max-width: 900px) {
+  .history-layout .church-photos {
+    contain: none;
+    height: auto;
+    grid-template-rows: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .history-layout .church-photos img { height: auto; aspect-ratio: 3 / 2; }
+}
