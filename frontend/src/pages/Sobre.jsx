@@ -89,6 +89,14 @@ export default function Sobre() {
             <p>
               {"Hoje, a Comunidade Cristã Apostólica Vínculo da Paz considera-se fundada no dia da sua instituição — 18 de outubro de 2006 — e abençoada para seguir o chamado de Deus no mês de abril de 2008."}
             </p>
+            <h3 className="history-subtitle">Identidade e doutrina</h3>
+            <p>
+              {"Inspirada em Efésios 4, que exorta a preservar “a unidade do Espírito pelo vínculo da paz”, a Vínculo da Paz é uma igreja cristã apostólica que segue a doutrina dos Apóstolos. Tem a Bíblia Sagrada como regra de fé, Jesus Cristo como único e suficiente Senhor e Salvador e o Espírito Santo como selo de Deus, consolador e mestre. Sua ênfase está no ensino bíblico, na adoração, na unidade entre os irmãos e na pregação da graça de Cristo."}
+            </p>
+            <h3 className="history-subtitle">Atuação hoje</h3>
+            <p>
+              {"A vida da comunidade gira em torno dos cultos de domingo, às 18h, com transmissão ao vivo das pregações. A igreja também realiza conferências de adoração ao longo do ano e participa de ações sociais e culturais em Samambaia, atenta às necessidades da comunidade local."}
+            </p>
           </Reveal>
         </div>
       </section>
