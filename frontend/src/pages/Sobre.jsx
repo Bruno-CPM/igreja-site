@@ -74,8 +74,20 @@ export default function Sobre() {
           <Reveal delay={100}>
             <span className="eyebrow">Nossa história</span>
             <h2>De onde viemos</h2>
-            <p className="placeholder-note">
-              [Texto sobre a história da igreja a ser fornecido — fundação, marcos importantes e crescimento da comunidade ao longo dos anos.]
+            <p>
+              {"A Comunidade Cristã Apostólica Vínculo da Paz foi fundada em 18 de outubro de 2006. Naquela ocasião, a congregação tinha outro nome — 3ª IEPSA —, pois fazia parte de outra missão e de outros valores."}
+            </p>
+            <p>
+              {"Em 2008, Deus deu aos bispos Eduardo Nascimento Campos e Deuzenir Silva Nascimento Campos a direção para institucionalizar a CCAVP — Comunidade Cristã Apostólica Vínculo da Paz —, agora com a missão de atuar como corpo de Cristo, com base em Efésios 4:3: 'conservando a unidade do Espírito pelo vínculo da paz'."}
+            </p>
+            <p>
+              {"Os bispos, por sua vez, levaram esse chamado de Deus aos seus antigos líderes, que prontamente marcaram uma reunião com todos os membros da antiga congregação local para saber qual seria a decisão deles também. Unanimemente, todos optaram por seguir seus pastores, os bispos Eduardo e Deuzenir."}
+            </p>
+            <p>
+              {"A liderança da IEPSA Sede, em conjunto com a decisão da congregação, teve uma atitude de lucidez e sabedoria ao nos abençoar e nos deixar ir, para seguirmos a direção que Deus havia nos dado."}
+            </p>
+            <p>
+              {"Hoje, a Comunidade Cristã Apostólica Vínculo da Paz considera-se fundada no dia da sua instituição — 18 de outubro de 2006 — e abençoada para seguir o chamado de Deus no mês de abril de 2008."}
             </p>
           </Reveal>
         </div>
