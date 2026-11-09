@@ -29,6 +29,11 @@ export default function Servicos() {
 
       <section className="section">
         <div className="container">
+          <Reveal>
+            <p className="page-intro">Conheça nossos serviços e dia a dia</p>
+          </Reveal>
+        </div>
+        <div className="container">
           {carregando && <p className="placeholder-note">Carregando serviços...</p>}
           {erro && <p className="placeholder-note">Não foi possível carregar os serviços agora.</p>}
 
