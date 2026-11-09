@@ -68,7 +68,7 @@ export default function Sobre() {
               <Reveal key={v.titulo} delay={i * 90}>
                 <div className="card value-card">
                   <h3>{v.titulo}</h3>
-                  <p className="placeholder-note">{v.texto}</p>
+                  <p>{v.texto}</p>
                 </div>
               </Reveal>
             ))}
