@@ -54,3 +54,29 @@
 /* Dentro de um card, o vídeo encosta nas bordas e não "salta". */
 .event-card .hover-video__frame { border-radius: 0; box-shadow: none; }
 .event-card .hover-video__frame:hover { transform: none; box-shadow: none; }
+/* Nome e título por cima do vídeo, na parte de baixo. */
+.hover-video__rotulo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 48px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+.hover-video__rotulo-nome {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+.hover-video__rotulo-titulo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: var(--linen);
+}

@@ -4,7 +4,8 @@ import './HoverVideo.css';
 // Vídeo que toca ao passar o mouse e para (voltando ao início) ao tirar o mouse.
 // Com `capa`, uma imagem cobre o vídeo e some enquanto ele toca.
 // No celular não existe "passar o mouse": um toque inicia ou para.
-export default function HoverVideo({ src, capa, capaAlt = '', legenda, className = '' }) {
+// `rotulo` ({ nome, titulo }) aparece por cima do vídeo, na parte de baixo.
+export default function HoverVideo({ src, capa, capaAlt = '', legenda, rotulo, className = '' }) {
   const videoRef = useRef(null);
   const [tocando, setTocando] = useState(false);
 
@@ -52,6 +53,12 @@ export default function HoverVideo({ src, capa, capaAlt = '', legenda, className
           onEnded={parar}
         />
         {capa && <img className="hover-video__capa" src={capa} alt={capaAlt} />}
+        {rotulo && (
+          <div className="hover-video__rotulo">
+            {rotulo.nome && <span className="hover-video__rotulo-nome">{rotulo.nome}</span>}
+            {rotulo.titulo && <span className="hover-video__rotulo-titulo">{rotulo.titulo}</span>}
+          </div>
+        )}
       </div>
       {legenda && <figcaption className="hover-video__caption">{legenda}</figcaption>}
     </figure>

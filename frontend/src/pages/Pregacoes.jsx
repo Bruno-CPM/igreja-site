@@ -12,10 +12,10 @@ import './PageShared.css';
 
 // Vídeos curtos em destaque. Para incluir outro, adicione um item aqui.
 const VIDEOS_DESTAQUE = [
-  { src: videoDestaque, legenda: 'BI Deuzenir – É preciso voltar' },
-  { src: videoDestaque2, capa: capaDestaque2, legenda: 'PR Isabela – O plano de Deus' },
-  { src: videoDestaque3, legenda: 'BI Eduardo – Praticante da Palavra' },
-  { src: videoDestaque4, legenda: 'PR Andre – O Avivamento' },
+  { src: videoDestaque, pregador: 'BI Deuzenir', titulo: 'É preciso voltar' },
+  { src: videoDestaque2, capa: capaDestaque2, pregador: 'PR Isabela', titulo: 'O plano de Deus' },
+  { src: videoDestaque3, pregador: 'BI Eduardo', titulo: 'Praticante da Palavra' },
+  { src: videoDestaque4, pregador: 'PR Andre', titulo: 'O Avivamento' },
 ];
 
 export default function Pregacoes() {
@@ -58,7 +58,12 @@ export default function Pregacoes() {
           <div className="sermon-highlight-row">
             {VIDEOS_DESTAQUE.map((video, i) => (
               <Reveal key={i} delay={i * 90}>
-                <HoverVideo src={video.src} capa={video.capa} capaAlt={video.legenda} legenda={video.legenda} />
+                <HoverVideo
+                  src={video.src}
+                  capa={video.capa}
+                  capaAlt={`${video.pregador} – ${video.titulo}`}
+                  rotulo={{ nome: video.pregador, titulo: video.titulo }}
+                />
               </Reveal>
             ))}
           </div>
