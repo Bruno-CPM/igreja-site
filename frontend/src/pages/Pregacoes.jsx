@@ -46,15 +46,15 @@ export default function Pregacoes() {
           <Reveal>
             <span className="eyebrow">Palavra semanal</span>
             <h1>Pregações</h1>
-            <p className="placeholder-note">
-              Reveja as mensagens compartilhadas em nossos cultos.
-            </p>
           </Reveal>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
+          <Reveal>
+            <p className="sermon-intro">Reveja as mensagens compartilhadas em nossos cultos.</p>
+          </Reveal>
           <div className="sermon-highlight-row">
             {VIDEOS_DESTAQUE.map((video, i) => (
               <Reveal key={i} delay={i * 90}>

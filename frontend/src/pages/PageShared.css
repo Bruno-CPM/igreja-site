@@ -231,3 +231,14 @@
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* Frase de abertura acima dos vídeos de Pregações */
+.sermon-intro {
+  margin: 0 0 28px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  line-height: 1.2;
+  color: var(--linen);
+}
