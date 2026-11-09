@@ -17,9 +17,6 @@ export default function Sobre() {
           <Reveal>
             <span className="eyebrow">Quem somos</span>
             <h1>Sobre a igreja</h1>
-            <p className="placeholder-note">
-              [Texto institucional a ser fornecido: história da igreja, ano de fundação e trajetória.]
-            </p>
           </Reveal>
         </div>
       </section>
