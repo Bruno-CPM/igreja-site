@@ -84,13 +84,25 @@ export default function Home() {
 
           {proximoEvento ? (
             <Reveal delay={100} className="event-highlight card">
-              <div className="event-highlight__date">
-                <span>{dataDoEvento(proximoEvento).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}</span>
-              </div>
+              {proximoEvento.capa ? (
+                <Link to="/eventos" className="event-highlight__capa">
+                  <img src={proximoEvento.capa} alt={`Arte do evento ${proximoEvento.titulo}`} />
+                </Link>
+              ) : (
+                <div className="event-highlight__date">
+                  <span>{dataDoEvento(proximoEvento).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}</span>
+                </div>
+              )}
               <div>
                 <h3>{proximoEvento.titulo}</h3>
                 {proximoEvento.convidado && <p>com {proximoEvento.convidado}</p>}
-                <p>{proximoEvento.local} {proximoEvento.horario ? `· ${proximoEvento.horario}` : ''}</p>
+                <p>
+                  {[
+                    dataDoEvento(proximoEvento).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long' }),
+                    proximoEvento.horario,
+                    proximoEvento.local,
+                  ].filter(Boolean).join(' · ')}
+                </p>
                 <p>{proximoEvento.descricao}</p>
                 <Link to="/eventos" className="btn btn-ghost-dark">Ver detalhes e local</Link>
               </div>

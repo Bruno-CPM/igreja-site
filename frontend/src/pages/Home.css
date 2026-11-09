@@ -66,6 +66,21 @@
   padding: 10px;
 }
 
+.event-highlight__capa {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+}
+.event-highlight__capa:hover { transform: translateY(-3px) scale(1.03); }
+.event-highlight__capa img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
 .sermon-preview-grid {
   margin-top: 32px;
   display: grid;
