@@ -284,3 +284,11 @@
   }
   .history-layout .church-photos img { height: auto; aspect-ratio: 3 / 2; }
 }
+
+/* Valores (Sobre): três cards por linha no computador */
+@media (min-width: 901px) {
+  .value-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) and (min-width: 561px) {
+  .value-grid { grid-template-columns: 1fr; }
+}

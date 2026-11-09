@@ -7,10 +7,18 @@ import adoracao from '../assets/igreja-adoracao.jpg';
 import fachadaAtual from '../assets/igreja-fachada-atual.jpg';
 
 const VALORES = [
-  { titulo: 'Fé', texto: '[texto a ser fornecido]' },
-  { titulo: 'Família', texto: '[texto a ser fornecido]' },
-  { titulo: 'Comunidade', texto: '[texto a ser fornecido]' },
-  { titulo: 'Serviço', texto: '[texto a ser fornecido]' },
+  {
+    titulo: 'Unidade',
+    texto: 'Conservamos a unidade do Espírito pelo vínculo da paz, reconhecendo um só corpo, um só Senhor, uma só fé e um só batismo.',
+  },
+  {
+    titulo: 'Palavra',
+    texto: 'A Bíblia Sagrada é a nossa regra de fé e prática; nada ensinamos além dela, nada omitimos dela.',
+  },
+  {
+    titulo: 'Discipulado',
+    texto: 'Não formamos ouvintes, formamos discípulos: homens e mulheres ungidos, ensinados e enviados a fazer discípulos.',
+  },
 ];
 
 export default function Sobre() {
