@@ -1,6 +1,8 @@
 import Reveal from '../components/Reveal';
 import heroSobre from '../assets/hero-sobre.jpeg';
 import './PageShared.css';
+import fachadaAntiga from '../assets/igreja-fachada-antiga.jpg';
+import fachadaAtual from '../assets/igreja-fachada-atual.jpg';
 
 const VALORES = [
   { titulo: 'Fé', texto: '[texto a ser fornecido]' },
@@ -65,8 +67,9 @@ export default function Sobre() {
 
       <section className="section">
         <div className="container two-col">
-          <Reveal className="arch-frame media-placeholder">
-            <span>[imagem da liderança / templo a ser fornecida]</span>
+          <Reveal className="church-photos">
+            <img src={fachadaAntiga} alt="Fachada antiga da igreja Vínculo da Paz" />
+            <img src={fachadaAtual} alt="Fachada atual da igreja Vínculo da Paz" />
           </Reveal>
           <Reveal delay={100}>
             <span className="eyebrow">Nossa história</span>

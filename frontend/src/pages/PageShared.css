@@ -241,3 +241,17 @@
   line-height: 1.2;
   color: var(--linen);
 }
+
+/* Fotos da igreja na seção "Nossa história" (Sobre) */
+.church-photos {
+  display: grid;
+  gap: 18px;
+}
+.church-photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
