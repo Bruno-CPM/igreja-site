@@ -2,19 +2,16 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import heroVideo from '../assets/hero-capa.mp4';
-import { getEventos, getPregacoes } from '../services/api';
+import { getPregacoes } from '../services/api';
+import { proximosEventos, dataDoEvento } from '../data/eventos';
 import './Home.css';
 
 export default function Home() {
-  const [proximoEvento, setProximoEvento] = useState(null);
+  const proximoEvento = proximosEventos()[0] || null;
   const [pregacoes, setPregacoes] = useState([]);
   const [erro, setErro] = useState(false);
 
   useEffect(() => {
-    getEventos(false)
-      .then((lista) => setProximoEvento(lista[0] || null))
-      .catch(() => setErro(true));
-
     getPregacoes()
       .then((lista) => setPregacoes(lista.slice(0, 3)))
       .catch(() => setErro(true));
@@ -88,18 +85,19 @@ export default function Home() {
           {proximoEvento ? (
             <Reveal delay={100} className="event-highlight card">
               <div className="event-highlight__date">
-                <span>{new Date(proximoEvento.data).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}</span>
+                <span>{dataDoEvento(proximoEvento).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })}</span>
               </div>
               <div>
                 <h3>{proximoEvento.titulo}</h3>
+                {proximoEvento.convidado && <p>com {proximoEvento.convidado}</p>}
                 <p>{proximoEvento.local} {proximoEvento.horario ? `· ${proximoEvento.horario}` : ''}</p>
                 <p>{proximoEvento.descricao}</p>
-                <Link to="/eventos" className="btn btn-ghost-dark">Ver todos os eventos</Link>
+                <Link to="/eventos" className="btn btn-ghost-dark">Ver detalhes e local</Link>
               </div>
             </Reveal>
           ) : (
             <p className="placeholder-note">
-              {erro ? 'Não foi possível carregar os eventos agora.' : 'Nenhum evento futuro cadastrado ainda.'}
+              Nenhum evento especial agendado no momento. Venha nos visitar no culto de domingo, às 18h!
             </p>
           )}
         </div>

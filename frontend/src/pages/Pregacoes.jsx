@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Reveal from '../components/Reveal';
+import HoverVideo from '../components/HoverVideo';
 import { getPregacoes } from '../services/api';
 import heroPregacoes from '../assets/hero-pregacoes.jpeg';
 import videoDestaque from '../assets/pregacao-destaque.mp4';
@@ -15,54 +16,6 @@ const VIDEOS_DESTAQUE = [
   { src: videoDestaque3, legenda: 'BI Eduardo – Praticante da Palavra' },
   { src: videoDestaque4, legenda: 'PR Andre – O Avivamento' },
 ];
-
-// Vídeo que toca ao passar o mouse e para (voltando ao início) ao tirar o mouse.
-function VideoDestaque({ src, legenda }) {
-  const videoRef = useRef(null);
-
-  // Toca com som; se o navegador bloquear o som, toca sem som.
-  const iniciar = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = false;
-    v.play().catch(() => {
-      v.muted = true;
-      v.play().catch(() => {});
-    });
-  };
-
-  const parar = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.pause();
-    v.currentTime = 0;
-  };
-
-  // No celular não existe "passar o mouse": um toque inicia ou para.
-  const alternar = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) iniciar();
-    else parar();
-  };
-
-  return (
-    <figure className="sermon-highlight">
-      <video
-        ref={videoRef}
-        className="sermon-highlight__video"
-        src={src}
-        playsInline
-        preload="metadata"
-        onMouseEnter={iniciar}
-        onMouseLeave={parar}
-        onTouchStart={alternar}
-        onEnded={parar}
-      />
-      {legenda && <figcaption className="sermon-highlight__caption">{legenda}</figcaption>}
-    </figure>
-  );
-}
 
 export default function Pregacoes() {
   const [pregacoes, setPregacoes] = useState([]);
@@ -104,7 +57,7 @@ export default function Pregacoes() {
           <div className="sermon-highlight-row">
             {VIDEOS_DESTAQUE.map((video, i) => (
               <Reveal key={i} delay={i * 90}>
-                <VideoDestaque src={video.src} legenda={video.legenda} />
+                <HoverVideo src={video.src} legenda={video.legenda} />
               </Reveal>
             ))}
           </div>
