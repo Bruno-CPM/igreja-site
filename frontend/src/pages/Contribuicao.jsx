@@ -84,7 +84,7 @@ export default function Contribuicao() {
       <section className="section">
         <div className="container">
           <Reveal>
-            <p className="page-intro">Contribua com o dízimo via Pix ou ative um lembrete mensal para não esquecer.</p>
+            <p className="page-intro">Contribua com o dízimo via Pix ou ative um lembrete mensal para não esquecer</p>
           </Reveal>
         </div>
         <div className="container dizimo-grid">

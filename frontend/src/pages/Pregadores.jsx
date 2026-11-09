@@ -33,7 +33,7 @@ export default function Pregadores() {
       <section className="section">
         <div className="container">
           <Reveal>
-            <p className="page-intro">Conheça os pastores e ministros que compartilham a Palavra em nossa igreja.</p>
+            <p className="page-intro">Conheça os pastores e ministros que compartilham a Palavra em nossa igreja</p>
           </Reveal>
         </div>
         <div className="container">

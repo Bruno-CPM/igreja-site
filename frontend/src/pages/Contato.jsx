@@ -41,7 +41,7 @@ export default function Contato() {
       <section className="section contato-form-section">
         <div className="container">
           <Reveal>
-            <p className="page-intro">Envie sua mensagem, dúvida ou pedido de oração. Responderemos em breve.</p>
+            <p className="page-intro">Envie sua mensagem, dúvida ou pedido de oração. Responderemos em breve</p>
           </Reveal>
         </div>
         <div className="container contato-grid">

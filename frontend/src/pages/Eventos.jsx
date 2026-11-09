@@ -103,7 +103,7 @@ export default function Eventos() {
       <section className="section">
         <div className="container">
           <Reveal>
-            <p className="page-intro">Acompanhe os próximos eventos e relembre os eventos que a igreja já realizou.</p>
+            <p className="page-intro">Acompanhe os próximos eventos e relembre os eventos que a igreja já realizou</p>
           </Reveal>
         </div>
         <div className="container">
