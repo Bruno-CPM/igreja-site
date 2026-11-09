@@ -232,8 +232,8 @@
   .grid-2 { grid-template-columns: 1fr; }
 }
 
-/* Frase de abertura acima dos vídeos de Pregações */
-.sermon-intro {
+/* Frase de abertura de cada página, logo abaixo do banner */
+.page-intro {
   margin: 0 0 28px;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-style: italic;

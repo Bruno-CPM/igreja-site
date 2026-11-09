@@ -77,14 +77,16 @@ export default function Contribuicao() {
           <Reveal>
             <span className="eyebrow">Apoie a igreja</span>
             <h1>Gostaria de contribuir?</h1>
-            <p className="placeholder-note">
-              Contribua com o dízimo via Pix ou ative um lembrete mensal para não esquecer.
-            </p>
           </Reveal>
         </div>
       </section>
 
       <section className="section">
+        <div className="container">
+          <Reveal>
+            <p className="page-intro">Contribua com o dízimo via Pix ou ative um lembrete mensal para não esquecer.</p>
+          </Reveal>
+        </div>
         <div className="container dizimo-grid">
           <Reveal className="card dizimo-card">
             <span className="eyebrow">Contribua com o dízimo</span>

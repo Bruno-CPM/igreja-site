@@ -96,14 +96,16 @@ export default function Eventos() {
           <Reveal>
             <span className="eyebrow">Agenda da igreja</span>
             <h1>Eventos</h1>
-            <p className="placeholder-note">
-              Acompanhe os próximos eventos e relembre os eventos que a igreja já realizou.
-            </p>
           </Reveal>
         </div>
       </section>
 
       <section className="section">
+        <div className="container">
+          <Reveal>
+            <p className="page-intro">Acompanhe os próximos eventos e relembre os eventos que a igreja já realizou.</p>
+          </Reveal>
+        </div>
         <div className="container">
           <div className="tabs" role="tablist" aria-label="Filtro de eventos">
             <button

@@ -26,14 +26,16 @@ export default function Pregadores() {
           <Reveal>
             <span className="eyebrow">Quem prega entre nós</span>
             <h1>Pregadores</h1>
-            <p className="placeholder-note">
-              Conheça os pastores e ministros que compartilham a Palavra em nossa igreja.
-            </p>
           </Reveal>
         </div>
       </section>
 
       <section className="section">
+        <div className="container">
+          <Reveal>
+            <p className="page-intro">Conheça os pastores e ministros que compartilham a Palavra em nossa igreja.</p>
+          </Reveal>
+        </div>
         <div className="container">
           {carregando && <p className="placeholder-note">Carregando pregadores...</p>}
           {erro && <p className="placeholder-note">Não foi possível carregar os pregadores agora.</p>}

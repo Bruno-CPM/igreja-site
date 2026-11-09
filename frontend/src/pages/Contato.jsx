@@ -34,14 +34,16 @@ export default function Contato() {
           <Reveal>
             <span className="eyebrow">Estamos aqui para ouvir você</span>
             <h1>Contato</h1>
-            <p className="placeholder-note">
-              Envie sua mensagem, dúvida ou pedido de oração. Responderemos em breve.
-            </p>
           </Reveal>
         </div>
       </section>
 
       <section className="section contato-form-section">
+        <div className="container">
+          <Reveal>
+            <p className="page-intro">Envie sua mensagem, dúvida ou pedido de oração. Responderemos em breve.</p>
+          </Reveal>
+        </div>
         <div className="container contato-grid">
           <Reveal as="form" className="card contato-form" onSubmit={handleSubmit}>
             <label>

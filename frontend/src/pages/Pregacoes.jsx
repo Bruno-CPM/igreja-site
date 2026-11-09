@@ -53,7 +53,7 @@ export default function Pregacoes() {
       <section className="section">
         <div className="container">
           <Reveal>
-            <p className="sermon-intro">Reveja as mensagens compartilhadas em nossos cultos.</p>
+            <p className="page-intro">Reveja as mensagens compartilhadas em nossos cultos.</p>
           </Reveal>
           <div className="sermon-highlight-row">
             {VIDEOS_DESTAQUE.map((video, i) => (

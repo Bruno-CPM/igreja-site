@@ -23,9 +23,6 @@ export default function Servicos() {
           <Reveal>
             <span className="eyebrow">O que oferecemos</span>
             <h1>Serviços da igreja</h1>
-            <p className="placeholder-note">
-              [Texto introdutório sobre os serviços/ministérios a ser fornecido.]
-            </p>
           </Reveal>
         </div>
       </section>
