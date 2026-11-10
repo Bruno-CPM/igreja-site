@@ -70,3 +70,13 @@
 .inscritos-tabela th, .inscritos-tabela td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); }
 .inscritos-tabela th { color: var(--linen); font-weight: 700; }
 .inscritos-resumo { display: flex; gap: 28px; flex-wrap: wrap; margin: 18px 0 6px; }
+
+/* Quando fica embaixo da arte do evento, vira uma caixa própria */
+.event-feature__media .inscricao {
+  margin-top: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  backdrop-filter: blur(6px);
+}

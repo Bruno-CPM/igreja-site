@@ -42,6 +42,7 @@ function EventoDestaque({ ev }) {
           ev.capa && <img className="event-feature__capa" src={ev.capa} alt={`Arte do evento ${ev.titulo}`} />
         )}
         {ev.descricao && <p className="event-feature__hint">{ev.descricao}</p>}
+        {ev.inscricoes && <InscricaoEvento ev={ev} />}
       </div>
 
       <div className="event-feature__info card">
@@ -79,8 +80,6 @@ function EventoDestaque({ ev }) {
             </a>
           </>
         )}
-
-        {ev.inscricoes && <InscricaoEvento ev={ev} />}
       </div>
     </div>
   );
