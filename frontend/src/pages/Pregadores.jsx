@@ -10,9 +10,9 @@ import './PageShared.css';
 
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
 const PREGADORES_FIXOS = [
-  { id: 'local-eduardo', nome: 'BI Eduardo', fotoUrl: fotoEduardo },
-  { id: 'local-andre', nome: 'PR Andre', fotoUrl: fotoAndre },
-  { id: 'local-isabela', nome: 'PR Isabela', fotoUrl: fotoIsabela },
+  { id: 'local-eduardo', nome: 'Bispo Eduardo Campos', fotoUrl: fotoEduardo },
+  { id: 'local-andre', nome: 'Pastor Andre Quelas', fotoUrl: fotoAndre },
+  { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
 ];
