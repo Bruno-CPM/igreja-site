@@ -6,6 +6,7 @@ import fotoAndre from '../assets/pregador-foto-2.jpg';
 import fotoIsabela from '../assets/pregador-foto-3.jpg';
 import fotoAlfredo from '../assets/pregador-foto-4.jpg';
 import fotoDeuzenir from '../assets/pregador-foto-5.jpg';
+import fotoAndreia from '../assets/pregador-foto-6.jpg';
 import './PageShared.css';
 
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
@@ -15,6 +16,7 @@ const PREGADORES_FIXOS = [
   { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
+  { id: 'local-andreia', nome: 'Bispa Andreia Fujiwara', fotoUrl: fotoAndreia },
 ];
 
 function iniciais(nome = '') {
