@@ -104,7 +104,12 @@ export default function Home() {
                   ].filter(Boolean).join(' · ')}
                 </p>
                 <p>{proximoEvento.descricao}</p>
-                <Link to="/eventos" className="btn btn-ghost-dark">Ver detalhes e local</Link>
+                <div className="home-event__acoes">
+                  {proximoEvento.inscricoes && (
+                    <Link to="/eventos#inscricao" className="btn btn-primary">Fazer Inscrição</Link>
+                  )}
+                  <Link to="/eventos" className="btn btn-ghost-dark">Ver detalhes e local</Link>
+                </div>
               </div>
             </Reveal>
           ) : (

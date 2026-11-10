@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './InscricaoEvento.css';
 
 // Contador de presença + formulário de inscrição de um evento.
@@ -8,6 +9,15 @@ export default function InscricaoEvento({ ev }) {
   const [form, setForm] = useState({ nome: '', telefone: '', pessoas: 1 });
   const [status, setStatus] = useState('livre'); // livre | enviando | sucesso | erro
   const [msgErro, setMsgErro] = useState('');
+  const caixa = useRef(null);
+  const { hash } = useLocation();
+
+  // Vindo do botão "Fazer Inscrição" da página inicial: rola até o formulário.
+  useEffect(() => {
+    if (hash !== '#inscricao' || !caixa.current) return;
+    const t = setTimeout(() => caixa.current.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+    return () => clearTimeout(t);
+  }, [hash]);
 
   useEffect(() => {
     fetch(`/api/inscricoes?evento=${encodeURIComponent(ev.id)}`)
@@ -44,7 +54,7 @@ export default function InscricaoEvento({ ev }) {
   try { jaInscrito = localStorage.getItem(`inscrito-${ev.id}`) === '1'; } catch (_) { /* sem armazenamento */ }
 
   return (
-    <div className="inscricao">
+    <div className="inscricao" id="inscricao" ref={caixa}>
       <div className="inscricao__contador" aria-live="polite">
         <span className="inscricao__numero">{total === null ? '—' : total}</span>
         <span className="inscricao__rotulo">

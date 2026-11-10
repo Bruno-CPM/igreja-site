@@ -97,3 +97,5 @@
   .home-links, .sermon-preview-grid { grid-template-columns: 1fr; }
   .event-highlight { grid-template-columns: 90px 1fr; }
 }
+
+.home-event__acoes { display: flex; flex-wrap: wrap; gap: 12px; }
