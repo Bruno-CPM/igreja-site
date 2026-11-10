@@ -1,30 +1,46 @@
 import { useState } from 'react';
 import Reveal from '../components/Reveal';
-import { enviarContato } from '../services/api';
 import './PageShared.css';
 import './Contato.css';
 
 const CAMPOS_INICIAIS = { nome: '', email: '', telefone: '', texto: '' };
 
+// WhatsApp da igreja (só números: 55 + DDD + número).
+const WHATSAPP_IGREJA = '5561999674458';
+const WHATSAPP_EXIBIDO = '(61) 99967-4458';
+
+const linkWhatsApp = (texto) =>
+  `https://wa.me/${WHATSAPP_IGREJA}${texto ? `?text=${encodeURIComponent(texto)}` : ''}`;
+
+function montarMensagem({ nome, email, telefone, texto }) {
+  const linhas = [`Olá! Meu nome é ${nome.trim()}.`, '', texto.trim()];
+  const contatos = [];
+  if (email.trim()) contatos.push(`E-mail: ${email.trim()}`);
+  if (telefone.trim()) contatos.push(`Telefone: ${telefone.trim()}`);
+  if (contatos.length) linhas.push('', ...contatos);
+  linhas.push('', '(Enviado pelo site)');
+  return linhas.join('\n');
+}
+
 export default function Contato() {
   const [form, setForm] = useState(CAMPOS_INICIAIS);
-  const [status, setStatus] = useState('idle'); // idle | enviando | sucesso | erro
+  const [link, setLink] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  // Abre o WhatsApp da pessoa com a mensagem pronta para a igreja.
+  // A resposta automática vem da "Mensagem de saudação" do WhatsApp Business da igreja.
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('enviando');
-    try {
-      await enviarContato(form);
-      setStatus('sucesso');
-      setForm(CAMPOS_INICIAIS);
-    } catch {
-      setStatus('erro');
-    }
+    const url = linkWhatsApp(montarMensagem(form));
+    setLink(url);
+    // Sem 'noopener' aqui: com ele o navegador sempre devolve null e a página abriria duas vezes.
+    const aba = window.open(url, '_blank');
+    if (aba) aba.opener = null;
+    else window.location.href = url; // pop-up bloqueado: abre na mesma aba
   };
 
   return (
@@ -41,7 +57,10 @@ export default function Contato() {
       <section className="section contato-form-section">
         <div className="container">
           <Reveal>
-            <p className="page-intro">Envie sua mensagem, dúvida ou pedido de oração. Responderemos em breve</p>
+            <p className="page-intro">
+              Envie sua mensagem, dúvida ou pedido de oração. Ao enviar, o seu WhatsApp abre com a
+              mensagem pronta: é só tocar em enviar que respondemos por lá.
+            </p>
           </Reveal>
         </div>
         <div className="container contato-grid">
@@ -51,11 +70,11 @@ export default function Contato() {
               <input name="nome" value={form.nome} onChange={handleChange} required />
             </label>
             <label>
-              E-mail
-              <input type="email" name="email" value={form.email} onChange={handleChange} required />
+              <span>E-mail <span className="contato-opcional">(opcional)</span></span>
+              <input type="email" name="email" value={form.email} onChange={handleChange} />
             </label>
             <label>
-              Telefone
+              <span>Telefone <span className="contato-opcional">(opcional)</span></span>
               <input name="telefone" value={form.telefone} onChange={handleChange} />
             </label>
             <label>
@@ -63,12 +82,23 @@ export default function Contato() {
               <textarea name="texto" rows="5" value={form.texto} onChange={handleChange} required />
             </label>
 
-            <button type="submit" className="btn btn-primary" disabled={status === 'enviando'}>
-              {status === 'enviando' ? 'Enviando...' : 'Enviar mensagem'}
+            <button type="submit" className="btn btn-primary btn-whatsapp">
+              Enviar pelo WhatsApp
             </button>
 
-            {status === 'sucesso' && <p className="form-feedback form-feedback--ok">Mensagem enviada com sucesso!</p>}
-            {status === 'erro' && <p className="form-feedback form-feedback--erro">Não foi possível enviar agora. Tente novamente.</p>}
+            {link && (
+              <p className="form-feedback form-feedback--ok">
+                Abrimos o WhatsApp com a sua mensagem. Se não abriu,{' '}
+                <a href={link} target="_blank" rel="noopener noreferrer">toque aqui</a>.
+              </p>
+            )}
+
+            <p className="contato-direto">
+              Prefere conversar direto?{' '}
+              <a href={linkWhatsApp('Olá! Vim pelo site da igreja.')} target="_blank" rel="noopener noreferrer">
+                Fale com a gente no WhatsApp: <span className="contato-numero">{WHATSAPP_EXIBIDO}</span>
+              </a>
+            </p>
           </Reveal>
         </div>
       </section>

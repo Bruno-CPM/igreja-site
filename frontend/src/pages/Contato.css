@@ -44,3 +44,11 @@
 .form-feedback { font-weight: 600; }
 .form-feedback--ok { color: #5fbb77; }
 .form-feedback--erro { color: var(--brick-soft); }
+
+.contato-opcional { font-weight: 400; opacity: 0.7; }
+.btn.btn-whatsapp { background: #25d366; border-color: #25d366; color: #0b2a17; }
+.btn.btn-whatsapp:hover { background: #1fb85a; border-color: #1fb85a; color: #06190d; }
+.contato-direto { margin: 4px 0 0; font-size: 0.9rem; opacity: 0.85; }
+.contato-direto a { color: var(--gold-soft); font-weight: 600; }
+.form-feedback a { color: inherit; text-decoration: underline; }
+.contato-numero { white-space: nowrap; }
