@@ -3,12 +3,14 @@ import Reveal from '../components/Reveal';
 import { getPregadores } from '../services/api';
 import fotoEduardo from '../assets/pregador-foto-1.jpg';
 import fotoAndre from '../assets/pregador-foto-2.jpg';
+import fotoIsabela from '../assets/pregador-foto-3.jpg';
 import './PageShared.css';
 
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
 const PREGADORES_FIXOS = [
   { id: 'local-eduardo', nome: 'BI Eduardo', fotoUrl: fotoEduardo },
   { id: 'local-andre', nome: 'PR Andre', fotoUrl: fotoAndre },
+  { id: 'local-isabela', nome: 'PR Isabela', fotoUrl: fotoIsabela },
 ];
 
 function iniciais(nome = '') {
