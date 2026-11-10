@@ -101,6 +101,8 @@
   padding: 16px;
 }
 .preacher-card__img { aspect-ratio: 1/1; border-radius: 50% 50% 6px 6px / 30% 30% 6px 6px; border-bottom: none; box-shadow: inset 0 0 0 1px rgba(124, 148, 234, 0.35); }
+.preacher-card__img--foto { aspect-ratio: 3/4; padding: 0; overflow: hidden; }
+.preacher-card__img--foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
 .event-card__body, .preacher-card__body { padding: 20px; }
 .event-card__date { font-weight: 700; color: var(--brick-soft); font-size: 0.85rem; margin-bottom: 6px; display: block; }
 
