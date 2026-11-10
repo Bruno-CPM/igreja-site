@@ -73,6 +73,7 @@
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease;
 }
+.event-highlight__capa--story img { aspect-ratio: 9 / 16 !important; }
 .event-highlight__capa:hover { transform: translateY(-3px) scale(1.03); }
 .event-highlight__capa img {
   display: block;

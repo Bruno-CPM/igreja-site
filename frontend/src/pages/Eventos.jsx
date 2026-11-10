@@ -37,7 +37,7 @@ function EventoDestaque({ ev }) {
     <div className="event-feature">
       <div className="event-feature__media">
         {ev.video ? (
-          <HoverVideo src={ev.video} capa={ev.capa} capaAlt={`Arte do evento ${ev.titulo}`} className="hover-video--arte" />
+          <HoverVideo src={ev.video} capa={ev.capa} capaAlt={`Arte do evento ${ev.titulo}`} className={ev.capaFormato === 'story' ? '' : 'hover-video--arte'} />
         ) : (
           ev.capa && <img className="event-feature__capa" src={ev.capa} alt={`Arte do evento ${ev.titulo}`} />
         )}

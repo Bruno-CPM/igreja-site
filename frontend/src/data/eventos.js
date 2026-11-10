@@ -20,6 +20,7 @@ export const EVENTOS = [
     descricao: 'Uma noite de adoração na Vínculo da Paz com Mateus Brito.',
     video: rotaVideo,
     capa: rotaCapa,
+    capaFormato: 'story', // arte em pé (9:16), igual ao formato de story
     inscricoes: true, // mostra o contador e o formulário de presença
   },
   {

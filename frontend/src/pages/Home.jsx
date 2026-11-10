@@ -85,7 +85,7 @@ export default function Home() {
           {proximoEvento ? (
             <Reveal delay={100} className="event-highlight card">
               {proximoEvento.capa ? (
-                <Link to="/eventos" className="event-highlight__capa">
+                <Link to="/eventos" className={`event-highlight__capa${proximoEvento.capaFormato === 'story' ? ' event-highlight__capa--story' : ''}`}>
                   <img src={proximoEvento.capa} alt={`Arte do evento ${proximoEvento.titulo}`} />
                 </Link>
               ) : (
