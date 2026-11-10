@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './InscricaoEvento.css';
 
-// Contador de presença + formulário de inscrição de um evento.
+// Formulário de confirmação de presença de um evento (o total fica só na página /inscritos).
 // Os dados ficam na função /api/inscricoes (Vercel Blob).
 export default function InscricaoEvento({ ev }) {
-  const [total, setTotal] = useState(null);
   const [form, setForm] = useState({ nome: '', telefone: '', pessoas: 1 });
   const [status, setStatus] = useState('livre'); // livre | enviando | sucesso | erro
   const [msgErro, setMsgErro] = useState('');
@@ -18,13 +17,6 @@ export default function InscricaoEvento({ ev }) {
     const t = setTimeout(() => caixa.current.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
     return () => clearTimeout(t);
   }, [hash]);
-
-  useEffect(() => {
-    fetch(`/api/inscricoes?evento=${encodeURIComponent(ev.id)}`)
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((d) => setTotal(d.total))
-      .catch(() => setTotal(null));
-  }, [ev.id]);
 
   const alterar = (campo) => (e) => setForm({ ...form, [campo]: e.target.value });
 
@@ -40,8 +32,6 @@ export default function InscricaoEvento({ ev }) {
       });
       const d = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(d.erro || 'Não foi possível enviar agora. Tente novamente.');
-      const pessoas = Number(form.pessoas);
-      setTotal((t) => Math.max(d.total || 0, (t || 0) + pessoas));
       setStatus('sucesso');
       try { localStorage.setItem(`inscrito-${ev.id}`, '1'); } catch (_) { /* sem armazenamento */ }
     } catch (err) {
@@ -55,13 +45,6 @@ export default function InscricaoEvento({ ev }) {
 
   return (
     <div className="inscricao" id="inscricao" ref={caixa}>
-      <div className="inscricao__contador" aria-live="polite">
-        <span className="inscricao__numero">{total === null ? '—' : total}</span>
-        <span className="inscricao__rotulo">
-          {total === 1 ? 'pessoa confirmada' : 'pessoas confirmadas'}
-        </span>
-      </div>
-
       {status === 'sucesso' ? (
         <p className="form-feedback form-feedback--ok inscricao__ok">
           Presença confirmada! Esperamos você{Number(form.pessoas) > 1 ? 's' : ''} no {ev.titulo}.
