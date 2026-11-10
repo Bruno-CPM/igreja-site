@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Reveal from '../components/Reveal';
 import HoverVideo from '../components/HoverVideo';
+import InscricaoEvento from '../components/InscricaoEvento';
 import {
   proximosEventos,
   eventosRealizados,
@@ -78,6 +79,8 @@ function EventoDestaque({ ev }) {
             </a>
           </>
         )}
+
+        {ev.inscricoes && <InscricaoEvento ev={ev} />}
       </div>
     </div>
   );

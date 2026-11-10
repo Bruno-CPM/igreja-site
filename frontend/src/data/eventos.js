@@ -20,6 +20,7 @@ export const EVENTOS = [
     descricao: 'Uma noite de adoração na Vínculo da Paz com Mateus Brito.',
     video: rotaVideo,
     capa: rotaCapa,
+    inscricoes: true, // mostra o contador e o formulário de presença
   },
   {
     id: 'expo-gospel-2025',

@@ -9,6 +9,7 @@ import Pregacoes from './pages/Pregacoes';
 import Pregadores from './pages/Pregadores';
 import Contribuicao from './pages/Contribuicao';
 import Contato from './pages/Contato';
+import Inscritos from './pages/Inscritos';
 import './App.css';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/pregadores" element={<Pregadores />} />
           <Route path="/contribuicao" element={<Contribuicao />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/inscritos" element={<Inscritos />} />
         </Routes>
       </main>
       <Footer />

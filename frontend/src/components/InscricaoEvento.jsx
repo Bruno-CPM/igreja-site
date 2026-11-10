@@ -1,0 +1,85 @@
+import { useEffect, useState } from 'react';
+import './InscricaoEvento.css';
+
+// Contador de presença + formulário de inscrição de um evento.
+// Os dados ficam na função /api/inscricoes (Vercel Blob).
+export default function InscricaoEvento({ ev }) {
+  const [total, setTotal] = useState(null);
+  const [form, setForm] = useState({ nome: '', telefone: '', pessoas: 1 });
+  const [status, setStatus] = useState('livre'); // livre | enviando | sucesso | erro
+  const [msgErro, setMsgErro] = useState('');
+
+  useEffect(() => {
+    fetch(`/api/inscricoes?evento=${encodeURIComponent(ev.id)}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d) => setTotal(d.total))
+      .catch(() => setTotal(null));
+  }, [ev.id]);
+
+  const alterar = (campo) => (e) => setForm({ ...form, [campo]: e.target.value });
+
+  async function enviar(e) {
+    e.preventDefault();
+    setStatus('enviando');
+    setMsgErro('');
+    try {
+      const r = await fetch('/api/inscricoes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ evento: ev.id, ...form, pessoas: Number(form.pessoas) }),
+      });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(d.erro || 'Não foi possível enviar agora. Tente novamente.');
+      const pessoas = Number(form.pessoas);
+      setTotal((t) => Math.max(d.total || 0, (t || 0) + pessoas));
+      setStatus('sucesso');
+      try { localStorage.setItem(`inscrito-${ev.id}`, '1'); } catch (_) { /* sem armazenamento */ }
+    } catch (err) {
+      setMsgErro(err.message);
+      setStatus('erro');
+    }
+  }
+
+  let jaInscrito = false;
+  try { jaInscrito = localStorage.getItem(`inscrito-${ev.id}`) === '1'; } catch (_) { /* sem armazenamento */ }
+
+  return (
+    <div className="inscricao">
+      <div className="inscricao__contador" aria-live="polite">
+        <span className="inscricao__numero">{total === null ? '—' : total}</span>
+        <span className="inscricao__rotulo">
+          {total === 1 ? 'pessoa confirmada' : 'pessoas confirmadas'}
+        </span>
+      </div>
+
+      {status === 'sucesso' ? (
+        <p className="form-feedback form-feedback--ok inscricao__ok">
+          Presença confirmada! Esperamos você{Number(form.pessoas) > 1 ? 's' : ''} no {ev.titulo}.
+        </p>
+      ) : (
+        <form className="inscricao__form" onSubmit={enviar}>
+          <h3 className="inscricao__titulo">Confirme sua presença</h3>
+          {jaInscrito && (
+            <p className="inscricao__aviso">Você já confirmou presença neste aparelho. Só envie de novo para outras pessoas.</p>
+          )}
+          <label>
+            Nome
+            <input type="text" required minLength={2} maxLength={100} value={form.nome} onChange={alterar('nome')} placeholder="Seu nome completo" />
+          </label>
+          <label>
+            WhatsApp <span className="inscricao__opcional">(opcional)</span>
+            <input type="tel" maxLength={25} value={form.telefone} onChange={alterar('telefone')} placeholder="(61) 90000-0000" />
+          </label>
+          <label>
+            Quantas pessoas vão (contando com você)?
+            <input type="number" required min={1} max={10} value={form.pessoas} onChange={alterar('pessoas')} />
+          </label>
+          <button type="submit" className="btn btn-primary" disabled={status === 'enviando'}>
+            {status === 'enviando' ? 'Enviando...' : 'Confirmar presença'}
+          </button>
+          {status === 'erro' && <p className="form-feedback form-feedback--erro">{msgErro}</p>}
+        </form>
+      )}
+    </div>
+  );
+}
