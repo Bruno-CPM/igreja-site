@@ -73,7 +73,16 @@
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease;
 }
-.event-highlight__capa--story img { aspect-ratio: 9 / 16 !important; }
+/* Arte em pé (9:16) dentro do quadro compacto 4:5: aparece inteira, com a própria arte desfocada nas laterais. */
+.event-highlight__capa--story { position: relative; overflow: hidden; }
+.event-highlight__capa--story::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  background: var(--capa-fundo) center / cover;
+  filter: blur(14px) brightness(0.7);
+}
+.event-highlight__capa.event-highlight__capa--story img { position: relative; object-fit: contain; }
 .event-highlight__capa:hover { transform: translateY(-3px) scale(1.03); }
 .event-highlight__capa img {
   display: block;
