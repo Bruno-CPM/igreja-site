@@ -12,7 +12,7 @@ import heroEventos from '../assets/hero-eventos.jpeg';
 import './PageShared.css';
 
 const formatarData = (ev) =>
-  dataDoEvento(ev).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  ev.dataExibida || dataDoEvento(ev).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
 
 const diasAte = (ev) => {
   const hoje = new Date();

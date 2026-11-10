@@ -2,6 +2,8 @@ import rotaVideo from '../assets/evento-rota-dos-adoradores.mp4';
 import rotaCapa from '../assets/evento-rota-dos-adoradores-capa.jpg';
 import expoVideo from '../assets/evento-expo-gospel-2025.mp4';
 import expoCapa from '../assets/evento-expo-gospel-2025-capa.jpg';
+import conferencia2024Video from '../assets/evento-conferencia-2024.mp4';
+import conferencia2024Capa from '../assets/evento-conferencia-2024-capa.jpg';
 
 // Agenda de eventos da igreja.
 // Para incluir um evento, adicione um item nesta lista.
@@ -30,6 +32,20 @@ export const EVENTOS = [
     descricao: '',
     video: expoVideo,
     capa: expoCapa,
+    formato: 'horizontal', // vídeo deitado (16:9)
+  },
+  {
+    id: 'conferencia-vinculo-da-paz-2024',
+    titulo: 'Conferência Vínculo da Paz',
+    convidado: '',
+    data: '2024-01-01', // dia exato não informado; usado só para ordenar
+    dataExibida: '2024', // texto mostrado no lugar da data
+    horario: '',
+    local: 'Vínculo da Paz',
+    endereco: '',
+    descricao: '',
+    video: conferencia2024Video,
+    capa: conferencia2024Capa,
     formato: 'horizontal', // vídeo deitado (16:9)
   },
 ];
