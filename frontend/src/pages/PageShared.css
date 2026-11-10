@@ -104,6 +104,59 @@
 .preacher-card__img--foto { aspect-ratio: 3/4; padding: 0; overflow: hidden; }
 .preacher-card__img--foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
 .event-card__body, .preacher-card__body { padding: 20px; }
+
+/* Foto do pregador que vira e mostra o "sobre" no verso */
+.preacher-flip { perspective: 1200px; cursor: pointer; outline: none; }
+.preacher-flip__inner {
+  position: relative;
+  aspect-ratio: 3/4;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.preacher-flip:hover .preacher-flip__inner,
+.preacher-flip:focus-visible .preacher-flip__inner,
+.preacher-flip.is-virada .preacher-flip__inner { transform: rotateY(180deg); }
+.preacher-flip:focus-visible { box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.5); border-radius: 6px; }
+.preacher-flip__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.preacher-flip__face.preacher-card__img--foto { aspect-ratio: auto; }
+.preacher-flip__dica {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(10, 14, 30, 0.6);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.preacher-flip__verso {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  padding: 26px 24px;
+  border-radius: 50% 50% 6px 6px / 12% 12% 6px 6px;
+  background: linear-gradient(160deg, #22356f 0%, #18224a 100%);
+  box-shadow: inset 0 0 0 1px rgba(124, 148, 234, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: left;
+}
+.preacher-flip__verso h4 { margin: 0; font-family: var(--font-display); font-size: 1.15rem; color: var(--linen); }
+.preacher-flip__verso p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: rgba(245, 242, 234, 0.85); }
+@media (prefers-reduced-motion: reduce) {
+  .preacher-flip__inner { transition: none; }
+}
 .event-card__date { font-weight: 700; color: var(--brick-soft); font-size: 0.85rem; margin-bottom: 6px; display: block; }
 
 .sermon-highlight-row {

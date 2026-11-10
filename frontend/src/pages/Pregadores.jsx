@@ -10,14 +10,53 @@ import fotoAndreia from '../assets/pregador-foto-6.jpg';
 import './PageShared.css';
 
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
+// "sobre" (opcional): parágrafos que aparecem no verso da foto ao passar o mouse.
 const PREGADORES_FIXOS = [
   { id: 'local-eduardo', nome: 'Bispo Eduardo Campos', fotoUrl: fotoEduardo },
-  { id: 'local-andre', nome: 'Pastor Andre Quelhas', fotoUrl: fotoAndre },
+  {
+    id: 'local-andre',
+    nome: 'Pastor Andre Quelhas',
+    fotoUrl: fotoAndre,
+    sobre: [
+      'André Quelhas é pastor na Vínculo da Paz. Tem 26 anos e é casado há 3 anos com Isabella Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte, e André também atua no discipulado de jovens.',
+      'Sua missão é, por meio da adoração em suas diversas expressões, conduzir a igreja e uma nova geração a adorar a Jesus em espírito e em verdade.',
+    ],
+  },
   { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
   { id: 'local-andreia', nome: 'Bispa Andreia Fujiwara', fotoUrl: fotoAndreia },
 ];
+
+// Foto que vira ao passar o mouse (ou ao tocar, no celular) e mostra o "sobre" no verso.
+function FotoComSobre({ p }) {
+  const [virada, setVirada] = useState(false);
+  return (
+    <div
+      className={`preacher-flip${virada ? ' is-virada' : ''}`}
+      role="button"
+      tabIndex={0}
+      aria-pressed={virada}
+      aria-label={`Sobre ${p.nome}`}
+      onClick={() => setVirada((v) => !v)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setVirada((v) => !v); }
+      }}
+    >
+      <div className="preacher-flip__inner">
+        <div className="preacher-flip__face preacher-card__img preacher-card__img--foto">
+          <img src={p.fotoUrl} alt={p.nome} />
+          <span className="preacher-flip__dica">Sobre</span>
+        </div>
+        <div className="preacher-flip__face preacher-flip__verso">
+          <span className="eyebrow">Sobre</span>
+          <h4>{p.nome}</h4>
+          {p.sobre.map((par, i) => <p key={i}>{par}</p>)}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function iniciais(nome = '') {
   return nome.split(' ').filter(Boolean).slice(0, 2).map((n) => n[0]).join('').toUpperCase();
@@ -66,9 +105,13 @@ export default function Pregadores() {
             {pregadores.map((p, i) => (
               <Reveal key={p.id} delay={(i % 3) * 90}>
                 <div className="card preacher-card">
-                  <div className={`preacher-card__img${p.fotoUrl ? ' preacher-card__img--foto' : ''}`}>
-                    {p.fotoUrl ? <img src={p.fotoUrl} alt={p.nome} /> : <span>{iniciais(p.nome)}</span>}
-                  </div>
+                  {p.fotoUrl && p.sobre ? (
+                    <FotoComSobre p={p} />
+                  ) : (
+                    <div className={`preacher-card__img${p.fotoUrl ? ' preacher-card__img--foto' : ''}`}>
+                      {p.fotoUrl ? <img src={p.fotoUrl} alt={p.nome} /> : <span>{iniciais(p.nome)}</span>}
+                    </div>
+                  )}
                   <div className="preacher-card__body">
                     <h3>{p.nome}</h3>
                     {p.cargo && <span className="tag">{p.cargo}</span>}
