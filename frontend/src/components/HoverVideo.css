@@ -81,16 +81,8 @@
   color: var(--linen);
 }
 
-/* Arte em pé (9:16) dentro do quadro compacto 4:5: a arte aparece inteira,
-   com uma cópia desfocada dela preenchendo as laterais. */
-.hover-video--story-compacto .hover-video__frame::before {
-  content: '';
-  position: absolute;
-  inset: -24px;
-  background: var(--capa-fundo) center / cover;
-  filter: blur(20px) brightness(0.7);
-  z-index: 1;
-  transition: opacity 0.45s ease;
-}
-.hover-video--story-compacto .hover-video__frame.is-playing::before { opacity: 0; }
-.hover-video--story-compacto .hover-video__capa { object-fit: contain; z-index: 2; }
+/* Arte em pé (9:16) com a mesma altura do quadro compacto 4:5: o quadro fica
+   mais estreito (e centralizado) para a arte aparecer inteira, sem bordas. */
+.hover-video--story-compacto { width: 70.3%; margin: 0 auto; }
+.hover-video--story-compacto .hover-video__frame { aspect-ratio: 9 / 16; }
+.hover-video--story-compacto .hover-video__video { object-position: center; }

@@ -73,16 +73,9 @@
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease;
 }
-/* Arte em pé (9:16) dentro do quadro compacto 4:5: aparece inteira, com a própria arte desfocada nas laterais. */
-.event-highlight__capa--story { position: relative; overflow: hidden; }
-.event-highlight__capa--story::before {
-  content: '';
-  position: absolute;
-  inset: -16px;
-  background: var(--capa-fundo) center / cover;
-  filter: blur(14px) brightness(0.7);
-}
-.event-highlight__capa.event-highlight__capa--story img { position: relative; object-fit: contain; }
+/* Arte em pé (9:16): mesma altura da capa 4:5, coluna mais estreita, sem bordas. */
+.event-highlight--story { grid-template-columns: 99px 1fr; }
+.event-highlight__capa.event-highlight__capa--story img { aspect-ratio: 9 / 16; }
 .event-highlight__capa:hover { transform: translateY(-3px) scale(1.03); }
 .event-highlight__capa img {
   display: block;
@@ -106,6 +99,7 @@
   .hero { min-height: min(70vh, 560px); }
   .home-links, .sermon-preview-grid { grid-template-columns: 1fr; }
   .event-highlight { grid-template-columns: 90px 1fr; }
+  .event-highlight--story { grid-template-columns: 64px 1fr; }
 }
 
 .home-event__acoes { display: flex; flex-wrap: wrap; gap: 12px; }

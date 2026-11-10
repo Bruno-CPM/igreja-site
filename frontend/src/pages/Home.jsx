@@ -83,10 +83,9 @@ export default function Home() {
           </Reveal>
 
           {proximoEvento ? (
-            <Reveal delay={100} className="event-highlight card">
+            <Reveal delay={100} className={`event-highlight card${proximoEvento.capaFormato === 'story' ? ' event-highlight--story' : ''}`}>
               {proximoEvento.capa ? (
-                <Link to="/eventos" className={`event-highlight__capa${proximoEvento.capaFormato === 'story' ? ' event-highlight__capa--story' : ''}`}
-                  style={proximoEvento.capaFormato === 'story' ? { '--capa-fundo': `url(${proximoEvento.capa})` } : undefined}>
+                <Link to="/eventos" className={`event-highlight__capa${proximoEvento.capaFormato === 'story' ? ' event-highlight__capa--story' : ''}`}>
                   <img src={proximoEvento.capa} alt={`Arte do evento ${proximoEvento.titulo}`} />
                 </Link>
               ) : (
