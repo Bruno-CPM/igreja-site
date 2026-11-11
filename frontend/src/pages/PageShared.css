@@ -164,7 +164,13 @@
 .preacher-flip__verso--longo p { font-size: clamp(0.68rem, 3.62cqw, 0.88rem); line-height: 1.45; }
 .preacher-flip__verso h4 { margin: 0; font-family: var(--font-display); color: var(--linen); }
 .preacher-flip__verso p { margin: 0; color: rgba(245, 242, 234, 0.85); }
+/* Quando a foto vira, o nome de baixo some (ele já aparece no topo da bio). */
+.preacher-card__body h3 { transition: opacity 0.35s ease; }
+.preacher-card:has(.preacher-flip:hover) .preacher-card__body h3,
+.preacher-card:has(.preacher-flip:focus-visible) .preacher-card__body h3,
+.preacher-card:has(.preacher-flip.is-virada) .preacher-card__body h3 { opacity: 0; }
 @media (prefers-reduced-motion: reduce) {
+  .preacher-card__body h3 { transition: none; }
   .preacher-flip__inner { transition: none; }
 }
 .event-card__date { font-weight: 700; color: var(--brick-soft); font-size: 0.85rem; margin-bottom: 6px; display: block; }
