@@ -103,3 +103,23 @@
 }
 
 .home-event__acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Prévia das pregações na página inicial */
+.sermon-highlight-row.home-sermon-preview { justify-content: center; margin-top: 28px; }
+/* No celular: uma fileira que desliza para o lado, em vez de quatro vídeos empilhados */
+@media (max-width: 640px) {
+  .sermon-highlight-row.home-sermon-preview {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 4px 24px 12px;
+    scroll-padding-left: 24px;
+    scrollbar-width: none;
+  }
+  .sermon-highlight-row.home-sermon-preview::-webkit-scrollbar { display: none; }
+  .sermon-highlight-row.home-sermon-preview > * { flex: 0 0 58%; width: auto; scroll-snap-align: start; }
+}

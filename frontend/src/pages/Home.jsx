@@ -1,21 +1,13 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import heroVideo from '../assets/hero-capa.mp4';
-import { getPregacoes } from '../services/api';
+import HoverVideo from '../components/HoverVideo';
+import { VIDEOS_DESTAQUE } from '../data/pregacoes';
 import { proximosEventos, dataDoEvento } from '../data/eventos';
 import './Home.css';
 
 export default function Home() {
   const proximoEvento = proximosEventos()[0] || null;
-  const [pregacoes, setPregacoes] = useState([]);
-  const [erro, setErro] = useState(false);
-
-  useEffect(() => {
-    getPregacoes()
-      .then((lista) => setPregacoes(lista.slice(0, 3)))
-      .catch(() => setErro(true));
-  }, []);
 
   return (
     <>
@@ -127,21 +119,18 @@ export default function Home() {
             <h2>Pregações recentes</h2>
           </Reveal>
 
-          <div className="sermon-preview-grid">
-            {pregacoes.map((p, i) => (
-              <Reveal key={p.id} delay={i * 100}>
-                <div className="card sermon-card">
-                  {p.tema && <span className="tag">{p.tema}</span>}
-                  <h3>{p.titulo}</h3>
-                  <p>{new Date(p.data).toLocaleDateString('pt-BR')} {p.pregador ? `· ${p.pregador.nome}` : ''}</p>
-                </div>
+          {/* Prévia: os vídeos curtos das pregações (tocam ao passar o mouse) */}
+          <div className="sermon-highlight-row home-sermon-preview">
+            {VIDEOS_DESTAQUE.map((video, i) => (
+              <Reveal key={i} delay={i * 90}>
+                <HoverVideo
+                  src={video.src}
+                  capa={video.capa}
+                  capaAlt={`${video.pregador} – ${video.titulo}`}
+                  rotulo={{ nome: video.pregador, titulo: video.titulo }}
+                />
               </Reveal>
             ))}
-            {pregacoes.length === 0 && (
-              <p className="placeholder-note">
-                {erro ? 'Não foi possível carregar as pregações agora.' : 'Nenhuma pregação cadastrada ainda.'}
-              </p>
-            )}
           </div>
 
           <div className="home-cta-center">
