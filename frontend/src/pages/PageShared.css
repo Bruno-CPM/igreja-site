@@ -429,7 +429,7 @@
 .secao-foto {
   position: relative;
   isolation: isolate;
-  background: var(--secao-foto) center 45% / cover no-repeat;
+  background: var(--secao-foto) center 80% / cover no-repeat;
 }
 .secao-foto::before {
   content: '';
