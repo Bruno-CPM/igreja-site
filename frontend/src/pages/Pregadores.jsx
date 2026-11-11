@@ -12,7 +12,15 @@ import './PageShared.css';
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
 // "sobre" (opcional): parágrafos que aparecem no verso da foto ao passar o mouse.
 const PREGADORES_FIXOS = [
-  { id: 'local-eduardo', nome: 'Bispo Eduardo Campos', fotoUrl: fotoEduardo },
+  {
+    id: 'local-eduardo',
+    nome: 'Bispo Eduardo Campos',
+    fotoUrl: fotoEduardo,
+    sobre: [
+      'Eduardo Campos é bispo na igreja Vínculo da Paz e dedica-se ao ministério há 29 anos. É casado há 27 anos com Deuzenir Campos, com quem tem dois filhos, Isabela e Calebe, e atribui toda a sua trajetória ao favor imerecido: a graça do Senhor Jesus.',
+      'Ele crê que Deus o tem chamado a trabalhar com o corpo de Cristo, a Igreja. Reconhece que, em alguns aspectos, a Igreja se encontra fragmentada, com pessoas buscando seus próprios interesses, mas acredita que o Espírito Santo continua agindo por meio de um remanescente fiel para que a obra de Deus siga adiante.',
+    ],
+  },
   {
     id: 'local-andre',
     nome: 'Pastor Andre Quelhas',
