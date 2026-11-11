@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Reveal from '../components/Reveal';
+import fundoContato from '../assets/fundo-contato.jpg';
 import './PageShared.css';
 import './Contato.css';
 
@@ -44,7 +45,7 @@ export default function Contato() {
   };
 
   return (
-    <>
+    <div className="contato-fundo" style={{ '--fundo-contato': `url(${fundoContato})` }}>
       <section className="page-hero">
         <div className="container">
           <Reveal>
@@ -101,6 +102,6 @@ export default function Contato() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }

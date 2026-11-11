@@ -53,3 +53,19 @@
 .form-feedback a { color: inherit; text-decoration: underline; }
 .contato-numero { white-space: nowrap; }
 .contato-intro { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* Foto de fundo da página (atrás do título e do formulário), escurecida para o texto ficar legível */
+.contato-fundo {
+  position: relative;
+  isolation: isolate;
+  background: var(--fundo-contato) center 30% / cover no-repeat;
+}
+.contato-fundo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(6, 8, 18, 0.7) 0%, rgba(10, 16, 42, 0.76) 50%, rgba(18, 30, 90, 0.9) 100%);
+}
+.contato-fundo .page-hero,
+.contato-fundo .section { background: transparent; }
