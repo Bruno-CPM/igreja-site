@@ -158,18 +158,37 @@ export default function Eventos() {
                 <p>Em breve você verá aqui os eventos que a igreja já realizou.</p>
               </div>
             ) : (
-              <div className="grid-2">
-                {realizados.map((ev, i) => (
-                  <Reveal key={ev.id} delay={(i % 3) * 90}>
-                    <CartaoEvento ev={ev} />
-                  </Reveal>
-                ))}
+              <div className="realizados-poster">
+                <div className="grid-2 realizados-poster__grid">
+                  {realizados.map((ev, i) => (
+                    <Reveal key={ev.id} delay={(i % 3) * 90}>
+                      <CartaoRasgado ev={ev} variante={i % 2} />
+                    </Reveal>
+                  ))}
+                </div>
               </div>
             )
           )}
         </div>
       </section>
     </>
+  );
+}
+
+// Evento já realizado em estilo "cartaz": fundo laranja com textura e vídeo com bordas
+// rasgadas em pixels, com a data e o título por cima do vídeo.
+function CartaoRasgado({ ev, variante }) {
+  if (!ev.video) return <CartaoEvento ev={ev} />;
+  return (
+    <div className={`evento-rasgado evento-rasgado--${variante}`}>
+      <HoverVideo
+        src={ev.video}
+        capa={ev.capa}
+        capaAlt={ev.titulo}
+        className="hover-video--horizontal"
+        rotulo={{ nome: formatarData(ev), titulo: ev.titulo }}
+      />
+    </div>
   );
 }
 
