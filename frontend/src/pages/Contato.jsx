@@ -58,8 +58,7 @@ export default function Contato() {
         <div className="container">
           <Reveal>
             <p className="page-intro">
-              Envie sua mensagem, dúvida ou pedido de oração. Ao enviar, o seu WhatsApp abre com a
-              mensagem pronta: é só tocar em enviar que respondemos por lá.
+              Envie sua mensagem, dúvida ou pedido de oração.
             </p>
           </Reveal>
         </div>
