@@ -154,12 +154,16 @@
 /* Centraliza na vertical quando cabe, mas sem cortar o topo se o texto for longo (aí rola). */
 .preacher-flip__verso > :first-child { margin-top: auto; }
 .preacher-flip__verso > :last-child { margin-bottom: auto; }
-@media (max-width: 480px) {
-  .preacher-flip__verso { padding: 22px 20px; gap: 8px; }
-  .preacher-flip__verso p { font-size: 0.86rem; line-height: 1.5; }
-}
-.preacher-flip__verso h4 { margin: 0; font-family: var(--font-display); font-size: 1.15rem; color: var(--linen); }
-.preacher-flip__verso p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: rgba(245, 242, 234, 0.85); }
+/* O texto do verso acompanha a largura do card (unidade cqw), então cabe
+   na foto em qualquer tamanho de tela. Biografias longas usam letra um pouco menor. */
+.preacher-flip { container-type: inline-size; }
+.preacher-flip__verso { padding: 6.5cqw 6cqw; gap: 2.4cqw; }
+.preacher-flip__verso h4 { font-size: clamp(0.95rem, 5cqw, 1.15rem); }
+.preacher-flip__verso p { font-size: clamp(0.7rem, 3.9cqw, 0.92rem); line-height: 1.5; }
+.preacher-flip__verso--longo { gap: 2cqw; }
+.preacher-flip__verso--longo p { font-size: clamp(0.68rem, 3.62cqw, 0.88rem); line-height: 1.45; }
+.preacher-flip__verso h4 { margin: 0; font-family: var(--font-display); color: var(--linen); }
+.preacher-flip__verso p { margin: 0; color: rgba(245, 242, 234, 0.85); }
 @media (prefers-reduced-motion: reduce) {
   .preacher-flip__inner { transition: none; }
 }

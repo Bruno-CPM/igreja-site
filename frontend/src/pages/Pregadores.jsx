@@ -7,6 +7,7 @@ import fotoIsabela from '../assets/pregador-foto-3.jpg';
 import fotoAlfredo from '../assets/pregador-foto-4.jpg';
 import fotoDeuzenir from '../assets/pregador-foto-5.jpg';
 import fotoAndreia from '../assets/pregador-foto-6.jpg';
+import fotoEduardoLeite from '../assets/pregador-foto-7.jpg';
 import './PageShared.css';
 
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
@@ -34,6 +35,15 @@ const PREGADORES_FIXOS = [
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
   { id: 'local-andreia', nome: 'Bispa Andreia Fujiwara', fotoUrl: fotoAndreia },
+  {
+    id: 'local-eduardo-leite',
+    nome: 'Pastor Eduardo Leite',
+    fotoUrl: fotoEduardoLeite,
+    sobre: [
+      'Eduardo Leite é pastor na igreja Vínculo da Paz, tem 49 anos e é casado há 17 anos com Simone Rodrigues. Conheceu a Cristo em 1996, em uma reunião dos Atletas de Cristo no Rio de Janeiro, o início de uma caminhada marcada pela graça. Em 1999, afastou-se dos caminhos do Senhor, mas a graça o alcançou novamente e, em 2007, ele retornou. Desde então, vive para servir Àquele que nunca desistiu dele.',
+      'O que mais o apaixona em Cristo é o Seu amor incondicional, que age com justiça e verdade; afinal, Ele é a própria Verdade. Sua visão sobre a Igreja no mundo hoje é a mesma que a Bíblia apresenta: ela é viva e poderosa. Ainda que muitos não a vejam, ela está lá, e só precisa despertar.',
+    ],
+  },
 ];
 
 // Foto que vira ao passar o mouse (ou ao tocar, no celular) e mostra o "sobre" no verso.
@@ -56,7 +66,7 @@ function FotoComSobre({ p }) {
           <img src={p.fotoUrl} alt={p.nome} />
           <span className="preacher-flip__dica">Sobre</span>
         </div>
-        <div className="preacher-flip__face preacher-flip__verso">
+        <div className={`preacher-flip__face preacher-flip__verso${p.sobre.join(' ').length > 620 ? ' preacher-flip__verso--longo' : ''}`}>
           <span className="eyebrow">Sobre</span>
           <h4>{p.nome}</h4>
           {p.sobre.map((par, i) => <p key={i}>{par}</p>)}
