@@ -52,3 +52,4 @@
 .contato-direto a { color: var(--gold-soft); font-weight: 600; }
 .form-feedback a { color: inherit; text-decoration: underline; }
 .contato-numero { white-space: nowrap; }
+.contato-intro { text-align: center; margin-left: auto; margin-right: auto; }

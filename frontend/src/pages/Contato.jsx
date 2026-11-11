@@ -57,8 +57,8 @@ export default function Contato() {
       <section className="section contato-form-section">
         <div className="container">
           <Reveal>
-            <p className="page-intro">
-              Envie sua mensagem, dúvida ou pedido de oração.
+            <p className="page-intro contato-intro">
+              Envie sua mensagem, dúvida ou pedido de oração
             </p>
           </Reveal>
         </div>
