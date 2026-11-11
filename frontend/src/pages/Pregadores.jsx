@@ -18,7 +18,7 @@ const PREGADORES_FIXOS = [
     nome: 'Pastor Andre Quelhas',
     fotoUrl: fotoAndre,
     sobre: [
-      'André Quelhas é pastor na igreja Vínculo da Paz, compositor e diretor musical. Tem 26 anos e é casado há 3 anos com Isabella Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte da igreja, e André também atua no discipulado de jovens.',
+      'André Quelhas é pastor na igreja Vínculo da Paz, compositor e diretor musical. Tem 26 anos e é casado há 3 anos com Isabela Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte da igreja, e André também atua no discipulado de jovens.',
       'Sua missão é conduzir uma igreja e uma geração a adorar Jesus em espírito e em verdade, por meio da adoração em todas as suas expressões.',
     ],
   },
