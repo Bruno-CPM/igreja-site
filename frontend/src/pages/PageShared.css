@@ -438,3 +438,5 @@
   z-index: -1;
   background: linear-gradient(180deg, rgba(8, 11, 26, 0.86) 0%, rgba(8, 11, 26, 0.74) 50%, rgba(10, 14, 34, 0.88) 100%);
 }
+.secao-foto--valores { background-position: center 40%; }
+.secao-foto--valores::before { background: linear-gradient(180deg, rgba(8, 11, 26, 0.74) 0%, rgba(8, 11, 26, 0.58) 50%, rgba(10, 14, 34, 0.82) 100%); }

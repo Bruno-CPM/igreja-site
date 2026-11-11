@@ -1,5 +1,6 @@
 import Reveal from '../components/Reveal';
 import fundoMissaoVisao from '../assets/fundo-missao-visao.jpg';
+import fundoValores from '../assets/fundo-valores.jpg';
 import heroSobre from '../assets/hero-sobre.jpeg';
 import './PageShared.css';
 import fachadaAntiga from '../assets/igreja-fachada-antiga.jpg';
@@ -58,7 +59,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section secao-foto secao-foto--valores" style={{ '--secao-foto': `url(${fundoValores})` }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow">O que nos guia</span>
