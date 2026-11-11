@@ -40,10 +40,9 @@ export const EVENTOS = [
     id: 'conferencia-vinculo-da-paz-2024',
     titulo: 'Conferência Vínculo da Paz',
     convidado: '',
-    data: '2024-01-01', // dia exato não informado; usado só para ordenar
-    dataExibida: '2024', // texto mostrado no lugar da data
+    data: '2024-11-06',
     horario: '',
-    local: 'Vínculo da Paz',
+    local: '',
     endereco: '',
     descricao: '',
     video: conferencia2024Video,
