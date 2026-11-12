@@ -23,17 +23,6 @@ const PREGADORES_FIXOS = [
     ],
   },
   {
-    id: 'local-andre',
-    nome: 'Pastor Andre Quelhas',
-    fotoUrl: fotoAndre,
-    sobre: [
-      'André Quelhas é pastor na igreja Vínculo da Paz, compositor e diretor musical. Tem 26 anos e é casado há 3 anos com Isabela Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte da igreja, e André também atua no discipulado de jovens.',
-      'Sua missão é conduzir uma igreja e uma geração a adorar Jesus em espírito e em verdade, por meio da adoração em todas as suas expressões.',
-    ],
-  },
-  { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
-  { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
-  {
     id: 'local-deuzenir',
     nome: 'Bispa Deuzenir Campos',
     fotoUrl: fotoDeuzenir,
@@ -44,6 +33,17 @@ const PREGADORES_FIXOS = [
       'Hoje, ela é um exemplo de fé inabalável, perseverança e serviço dedicado à expansão do Reino de Deus.',
     ],
   },
+  {
+    id: 'local-andre',
+    nome: 'Pastor Andre Quelhas',
+    fotoUrl: fotoAndre,
+    sobre: [
+      'André Quelhas é pastor na igreja Vínculo da Paz, compositor e diretor musical. Tem 26 anos e é casado há 3 anos com Isabela Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte da igreja, e André também atua no discipulado de jovens.',
+      'Sua missão é conduzir uma igreja e uma geração a adorar Jesus em espírito e em verdade, por meio da adoração em todas as suas expressões.',
+    ],
+  },
+  { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
+  { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   {
     id: 'local-andrea',
     nome: 'Bispa Andrea Fujiwara',
