@@ -33,7 +33,17 @@ const PREGADORES_FIXOS = [
   },
   { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
-  { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
+  {
+    id: 'local-deuzenir',
+    nome: 'Bispa Deuzenir Campos',
+    fotoUrl: fotoDeuzenir,
+    sobre: [
+      'Deuzenir Campos é bispa na Comunidade Vínculo da Paz, casada com Eduardo Campos, pastor sênior da Comunidade Vínculo da Paz. Mãe de Isabela Eduarda e Calebe Henrique, ela tem na família seu ministério mais precioso.',
+      'Sua trajetória de fé começou em janeiro de 1996, quando entregou sua vida a Jesus Cristo e se tornou a primeira geração cristã de sua família. Sua conversão foi um marco divino, e Deus usou sua vida como canal de transformação: por meio dela, seus pais, seus cinco irmãos e seus sobrinhos foram conduzidos ao conhecimento de Cristo.',
+      'No ministério, a Bispa Deuzenir atua com zelo e unção nas áreas de intercessão, aconselhamento e libertação familiar, servindo à Igreja com dedicação integral e um coração pastoral.',
+      'Hoje, ela é um exemplo de fé inabalável, perseverança e serviço dedicado à expansão do Reino de Deus.',
+    ],
+  },
   {
     id: 'local-andrea',
     nome: 'Bispa Andrea Fujiwara',
