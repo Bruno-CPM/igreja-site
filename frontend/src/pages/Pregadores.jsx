@@ -34,7 +34,17 @@ const PREGADORES_FIXOS = [
   { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
-  { id: 'local-andreia', nome: 'Bispa Andreia Fujiwara', fotoUrl: fotoAndreia },
+  {
+    id: 'local-andreia',
+    nome: 'Bispa Andreia Fujiwara',
+    fotoUrl: fotoAndreia,
+    sobre: [
+      'Andrea Fujiwara é bispa e está casada há 20 anos com o pastor Alfredo Fujiwara. Serve no Reino desde 1995 e pastoreia desde 2002.',
+      'O que mais a apaixona em Jesus é o Seu amor pela humanidade e a certeza de poder desfrutar de Sua amável companhia em todos os momentos e situações.',
+      'Ela crê que Deus continua comunicando Sua graça salvadora, porque a mensagem da cruz não mudou. É isso que a leva a olhar para os campos que já estão brancos para a colheita e para as almas que clamam, indo ao encontro do desejo do coração do Amado: que ninguém se perca.',
+      'Para Andrea, a Igreja de Cristo é a Sua noiva, e a noiva é intocável. Ela entende que a Igreja precisa de um alinhamento com os céus, mas segue firme na visão e no amadurecimento. Acredita que, de forma geral, a Igreja precisa voltar a ter Cristo no centro e abandonar práticas humanistas.',
+    ],
+  },
   {
     id: 'local-eduardo-leite',
     nome: 'Pastor Eduardo Leite',
@@ -45,6 +55,14 @@ const PREGADORES_FIXOS = [
     ],
   },
 ];
+
+// Biografias maiores usam letra um pouco menor para caber na foto sem rolagem.
+function tamanhoBio(sobre) {
+  const n = sobre.join(' ').length + sobre.length * 60; // cada parágrafo extra também ocupa espaço
+  if (n > 1050) return ' preacher-flip__verso--muito-longo';
+  if (n > 780) return ' preacher-flip__verso--longo';
+  return '';
+}
 
 // Foto que vira ao passar o mouse (ou ao tocar, no celular) e mostra o "sobre" no verso.
 function FotoComSobre({ p }) {
@@ -66,7 +84,7 @@ function FotoComSobre({ p }) {
           <img src={p.fotoUrl} alt={p.nome} />
           <span className="preacher-flip__dica">Sobre</span>
         </div>
-        <div className={`preacher-flip__face preacher-flip__verso${p.sobre.join(' ').length > 620 ? ' preacher-flip__verso--longo' : ''}`}>
+        <div className={`preacher-flip__face preacher-flip__verso${tamanhoBio(p.sobre)}`}>
           <span className="eyebrow">Sobre</span>
           <h4>{p.nome}</h4>
           {p.sobre.map((par, i) => <p key={i}>{par}</p>)}

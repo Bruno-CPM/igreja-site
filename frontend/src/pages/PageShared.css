@@ -162,6 +162,9 @@
 .preacher-flip__verso p { font-size: clamp(0.7rem, 3.9cqw, 0.92rem); line-height: 1.5; }
 .preacher-flip__verso--longo { gap: 2cqw; }
 .preacher-flip__verso--longo p { font-size: clamp(0.68rem, 3.62cqw, 0.88rem); line-height: 1.45; }
+.preacher-flip__verso--muito-longo { gap: 1.6cqw; padding-top: 5cqw; padding-bottom: 5cqw; }
+.preacher-flip__verso--muito-longo h4 { font-size: clamp(0.9rem, 4.4cqw, 1.05rem); }
+.preacher-flip__verso--muito-longo p { font-size: clamp(0.6rem, 3.05cqw, 0.8rem); line-height: 1.4; }
 .preacher-flip__verso h4 { margin: 0; font-family: var(--font-display); color: var(--linen); }
 .preacher-flip__verso p { margin: 0; color: rgba(245, 242, 234, 0.85); }
 /* Quando a foto vira, o nome de baixo some (ele já aparece no topo da bio). */
