@@ -6,7 +6,7 @@ import fotoAndre from '../assets/pregador-foto-2.jpg';
 import fotoIsabela from '../assets/pregador-foto-3.jpg';
 import fotoAlfredo from '../assets/pregador-foto-4.jpg';
 import fotoDeuzenir from '../assets/pregador-foto-5.jpg';
-import fotoAndreia from '../assets/pregador-foto-6.jpg';
+import fotoAndrea from '../assets/pregador-foto-6.jpg';
 import fotoEduardoLeite from '../assets/pregador-foto-7.jpg';
 import './PageShared.css';
 
@@ -35,9 +35,9 @@ const PREGADORES_FIXOS = [
   { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
   { id: 'local-deuzenir', nome: 'Bispa Deuzenir Campos', fotoUrl: fotoDeuzenir },
   {
-    id: 'local-andreia',
-    nome: 'Bispa Andreia Fujiwara',
-    fotoUrl: fotoAndreia,
+    id: 'local-andrea',
+    nome: 'Bispa Andrea Fujiwara',
+    fotoUrl: fotoAndrea,
     sobre: [
       'Andrea Fujiwara é bispa e está casada há 20 anos com o pastor Alfredo Fujiwara. Serve no Reino desde 1995 e pastoreia desde 2002.',
       'O que mais a apaixona em Jesus é o Seu amor pela humanidade e a certeza de poder desfrutar de Sua amável companhia em todos os momentos e situações.',
