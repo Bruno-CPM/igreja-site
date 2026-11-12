@@ -1,6 +1,5 @@
 import Reveal from '../components/Reveal';
-import fundoMissaoVisao from '../assets/fundo-missao-visao.jpg';
-import fundoValores from '../assets/fundo-valores.jpg';
+import fundoSobre from '../assets/fundo-sobre.jpg';
 import heroSobre from '../assets/hero-sobre.jpeg';
 import './PageShared.css';
 import fachadaAntiga from '../assets/igreja-fachada-antiga.jpg';
@@ -35,7 +34,9 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="section secao-foto" style={{ '--secao-foto': `url(${fundoMissaoVisao})` }}>
+      {/* Uma só foto de fundo atrás de Missão/Visão e Valores */}
+      <div className="secao-foto" style={{ '--secao-foto': `url(${fundoSobre})` }}>
+      <section className="section">
         <div className="container two-col">
           <Reveal>
             <h2>Nossa missão</h2>
@@ -59,7 +60,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <section className="section secao-foto secao-foto--valores" style={{ '--secao-foto': `url(${fundoValores})` }}>
+      <section className="section">
         <div className="container">
           <Reveal>
             <span className="eyebrow">O que nos guia</span>
@@ -77,6 +78,7 @@ export default function Sobre() {
           </div>
         </div>
       </section>
+      </div>
 
       <section className="section">
         <div className="container two-col history-layout">
