@@ -44,9 +44,6 @@ export default function Home() {
           <Reveal as="div">
             <span className="eyebrow">Nossa comunidade</span>
             <h2>Fé vivida em comunidade, todos os dias</h2>
-            <p className="placeholder-note">
-              [Texto de apresentação da igreja a ser fornecido — missão, valores e história resumida.]
-            </p>
           </Reveal>
 
           <div className="home-links">
