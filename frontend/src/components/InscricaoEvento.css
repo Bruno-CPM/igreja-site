@@ -73,8 +73,8 @@
 .inscritos-resumo { display: flex; gap: 28px; flex-wrap: wrap; margin: 18px 0 6px; }
 
 /* Quando fica embaixo da arte do evento, vira uma caixa própria */
-.event-feature__media .inscricao {
-  margin-top: 20px;
+.event-feature__inscricao .inscricao {
+  margin-top: 0;
   padding: 22px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--line);

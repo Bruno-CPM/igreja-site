@@ -290,9 +290,21 @@
   border: 1px solid var(--line);
 }
 .event-feature__map iframe { display: block; width: 100%; height: 100%; border: 0; }
+/* Informações + mapa embaixo, na largura toda: dados à esquerda, mapa à direita */
+.event-feature__info--largo {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 32px;
+  align-items: center;
+}
+.event-feature__info--largo .event-feature__map { margin: 0; }
+.event-feature__inscricao { align-self: center; }
 @media (max-width: 900px) {
   .event-feature { grid-template-columns: 1fr; }
   .event-feature__media { max-width: 380px; width: 100%; margin: 0 auto; }
+  .event-feature__inscricao { max-width: 520px; width: 100%; margin: 0 auto; }
+  .event-feature__info--largo { grid-template-columns: 1fr; gap: 20px; }
 }
 
 /* Eventos já realizados: dois por linha (vídeos deitados ficam maiores). */

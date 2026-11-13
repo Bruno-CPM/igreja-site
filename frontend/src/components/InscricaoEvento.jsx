@@ -60,7 +60,7 @@ export default function InscricaoEvento({ ev }) {
             <input type="text" required minLength={2} maxLength={100} value={form.nome} onChange={alterar('nome')} placeholder="Seu nome completo" />
           </label>
           <label>
-            WhatsApp <span className="inscricao__opcional">(opcional)</span>
+            <span>WhatsApp <span className="inscricao__opcional">(opcional)</span></span>
             <input type="tel" maxLength={25} value={form.telefone} onChange={alterar('telefone')} placeholder="(61) 90000-0000" />
           </label>
           <label>

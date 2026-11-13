@@ -42,10 +42,17 @@ function EventoDestaque({ ev }) {
           ev.capa && <img className="event-feature__capa" src={ev.capa} alt={`Arte do evento ${ev.titulo}`} />
         )}
         {ev.descricao && <p className="event-feature__hint">{ev.descricao}</p>}
-        {ev.inscricoes && <InscricaoEvento ev={ev} />}
       </div>
 
-      <div className="event-feature__info card">
+      {/* Inscrição ao lado da arte; informações e mapa ficam embaixo, ocupando a largura toda */}
+      {ev.inscricoes && (
+        <div className="event-feature__inscricao">
+          <InscricaoEvento ev={ev} />
+        </div>
+      )}
+
+      <div className={`event-feature__info card${ev.inscricoes ? ' event-feature__info--largo' : ''}`}>
+        <div className="event-feature__dados">
         <div className="event-feature__top">
           <div className="event-feature__date">
             <span className="event-feature__day">{dia}</span>
@@ -65,20 +72,22 @@ function EventoDestaque({ ev }) {
         </ul>
 
         {ev.endereco && (
-          <>
-            <div className="event-feature__map">
-              <iframe
-                title={`Mapa do local do evento ${ev.titulo}`}
-                src={mapaEmbutido(ev.endereco)}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-            <a className="btn btn-primary" href={linkDoMapa(ev.endereco)} target="_blank" rel="noopener noreferrer">
-              Como chegar
-            </a>
-          </>
+          <a className="btn btn-primary" href={linkDoMapa(ev.endereco)} target="_blank" rel="noopener noreferrer">
+            Como chegar
+          </a>
+        )}
+        </div>
+
+        {ev.endereco && (
+          <div className="event-feature__map">
+            <iframe
+              title={`Mapa do local do evento ${ev.titulo}`}
+              src={mapaEmbutido(ev.endereco)}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
         )}
       </div>
     </div>
