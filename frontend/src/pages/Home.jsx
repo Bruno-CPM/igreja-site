@@ -52,7 +52,7 @@ export default function Home() {
           <div className="home-links">
             {[
               { to: '/sobre', title: 'Sobre a igreja', desc: 'Nossa história, missão e valores.' },
-              { to: '/servicos', title: 'Serviços', desc: 'Cultos, ministérios e horários.' },
+              { to: '/pregadores', title: 'Pregadores', desc: 'Conheça quem prega entre nós.' },
               { to: '/contato', title: 'Contato', desc: 'Fale com a nossa equipe.' },
             ].map((item, i) => (
               <Reveal key={item.to} delay={i * 100}>

@@ -8,6 +8,7 @@ import fotoAlfredo from '../assets/pregador-foto-4.jpg';
 import fotoDeuzenir from '../assets/pregador-foto-5.jpg';
 import fotoAndrea from '../assets/pregador-foto-6.jpg';
 import fotoEduardoLeite from '../assets/pregador-foto-7.jpg';
+import heroPregadores from '../assets/hero-pregadores.jpeg';
 import './PageShared.css';
 
 // Pregadores com foto fixa no site. Para incluir outro, adicione um item aqui.
@@ -125,7 +126,7 @@ export default function Pregadores() {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero page-hero--photo" style={{ backgroundImage: `url(${heroPregadores})` }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow">Quem prega entre nós</span>

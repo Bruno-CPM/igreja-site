@@ -16,8 +16,6 @@ export const getPregacoes = (pregadorId) =>
 export const getPregadores = () =>
   api.get('/pregadores').then((res) => res.data);
 
-export const getServicos = () =>
-  api.get('/servicos').then((res) => res.data);
 
 export const enviarContato = (dados) =>
   api.post('/contato', dados).then((res) => res.data);

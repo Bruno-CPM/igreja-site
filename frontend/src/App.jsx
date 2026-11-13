@@ -1,9 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Sobre from './pages/Sobre';
-import Servicos from './pages/Servicos';
 import Eventos from './pages/Eventos';
 import Pregacoes from './pages/Pregacoes';
 import Pregadores from './pages/Pregadores';
@@ -20,7 +19,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
-          <Route path="/servicos" element={<Servicos />} />
+          {/* A página Serviços foi removida; links antigos vão para a página inicial */}
+          <Route path="/servicos" element={<Navigate to="/" replace />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/pregacoes" element={<Pregacoes />} />
           <Route path="/pregadores" element={<Pregadores />} />

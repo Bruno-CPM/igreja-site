@@ -6,7 +6,6 @@ import './Navbar.css';
 const LINKS = [
   { to: '/', label: 'Início', end: true },
   { to: '/sobre', label: 'Sobre' },
-  { to: '/servicos', label: 'Serviços' },
   { to: '/eventos', label: 'Eventos' },
   { to: '/pregacoes', label: 'Pregações' },
   { to: '/pregadores', label: 'Pregadores' },
