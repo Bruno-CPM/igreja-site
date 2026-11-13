@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal';
 import { getPregadores } from '../services/api';
 import fotoEduardo from '../assets/pregador-foto-1.jpg';
 import fotoAndre from '../assets/pregador-foto-2.jpg';
-import fotoIsabela from '../assets/pregador-foto-3.jpg';
+import fotoIsabella from '../assets/pregador-foto-3.jpg';
 import fotoAlfredo from '../assets/pregador-foto-4.jpg';
 import fotoDeuzenir from '../assets/pregador-foto-5.jpg';
 import fotoAndrea from '../assets/pregador-foto-6.jpg';
@@ -19,7 +19,7 @@ const PREGADORES_FIXOS = [
     nome: 'Bispo Eduardo Campos',
     fotoUrl: fotoEduardo,
     sobre: [
-      'Eduardo Campos é bispo na igreja Vínculo da Paz e dedica-se ao ministério há 29 anos. É casado há 27 anos com Deuzenir Campos, com quem tem dois filhos, Isabela e Calebe, e atribui toda a sua trajetória ao favor imerecido: a graça do Senhor Jesus.',
+      'Eduardo Campos é bispo na igreja Vínculo da Paz e dedica-se ao ministério há 29 anos. É casado há 27 anos com Deuzenir Campos, com quem tem dois filhos, Isabella e Calebe, e atribui toda a sua trajetória ao favor imerecido: a graça do Senhor Jesus.',
       'Ele crê que Deus o tem chamado a trabalhar com o corpo de Cristo, a Igreja. Reconhece que, em alguns aspectos, a Igreja se encontra fragmentada, com pessoas buscando seus próprios interesses, mas acredita que o Espírito Santo continua agindo por meio de um remanescente fiel para que a obra de Deus siga adiante.',
     ],
   },
@@ -28,7 +28,7 @@ const PREGADORES_FIXOS = [
     nome: 'Bispa Deuzenir Campos',
     fotoUrl: fotoDeuzenir,
     sobre: [
-      'Deuzenir Campos é bispa na Comunidade Vínculo da Paz, casada com Eduardo Campos, pastor sênior da Comunidade Vínculo da Paz. Mãe de Isabela Eduarda e Calebe Henrique, ela tem na família seu ministério mais precioso.',
+      'Deuzenir Campos é bispa na Comunidade Vínculo da Paz, casada com Eduardo Campos, pastor sênior da Comunidade Vínculo da Paz. Mãe de Isabella Eduarda e Calebe Henrique, ela tem na família seu ministério mais precioso.',
       'Sua trajetória de fé começou em janeiro de 1996, quando entregou sua vida a Jesus Cristo e se tornou a primeira geração cristã de sua família. Sua conversão foi um marco divino, e Deus usou sua vida como canal de transformação: por meio dela, seus pais, seus cinco irmãos e seus sobrinhos foram conduzidos ao conhecimento de Cristo.',
       'No ministério, a Bispa Deuzenir atua com zelo e unção nas áreas de intercessão, aconselhamento e libertação familiar, servindo à Igreja com dedicação integral e um coração pastoral.',
       'Hoje, ela é um exemplo de fé inabalável, perseverança e serviço dedicado à expansão do Reino de Deus.',
@@ -39,11 +39,11 @@ const PREGADORES_FIXOS = [
     nome: 'Pastor Andre Quelhas',
     fotoUrl: fotoAndre,
     sobre: [
-      'André Quelhas é pastor na igreja Vínculo da Paz, compositor e diretor musical. Tem 26 anos e é casado há 3 anos com Isabela Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte da igreja, e André também atua no discipulado de jovens.',
+      'André Quelhas é pastor na igreja Vínculo da Paz, compositor e diretor musical. Tem 26 anos e é casado há 3 anos com Isabella Quelhas. Há 6 anos, o casal lidera junto os ministérios de louvor e arte da igreja, e André também atua no discipulado de jovens.',
       'Sua missão é conduzir uma igreja e uma geração a adorar Jesus em espírito e em verdade, por meio da adoração em todas as suas expressões.',
     ],
   },
-  { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
+  { id: 'local-isabela', nome: 'Pastora Isabella Quelhas', fotoUrl: fotoIsabella },
   {
     id: 'local-alfredo',
     nome: 'Pastor Alfredo Fujiwara',

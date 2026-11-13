@@ -8,7 +8,7 @@ import videoDestaque4 from '../assets/pregacao-destaque-4.mp4';
 // Para incluir outro, adicione um item aqui (o primeiro da lista aparece primeiro).
 export const VIDEOS_DESTAQUE = [
   { src: videoDestaque, pregador: 'BI Deuzenir', titulo: 'É preciso voltar' },
-  { src: videoDestaque2, capa: capaDestaque2, pregador: 'PR Isabela', titulo: 'O plano de Deus' },
+  { src: videoDestaque2, capa: capaDestaque2, pregador: 'PR Isabella', titulo: 'O plano de Deus' },
   { src: videoDestaque3, pregador: 'BI Eduardo', titulo: 'Praticante da Palavra' },
   { src: videoDestaque4, pregador: 'PR Andre', titulo: 'O Avivamento' },
 ];
