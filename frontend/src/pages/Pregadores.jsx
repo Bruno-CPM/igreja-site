@@ -44,7 +44,17 @@ const PREGADORES_FIXOS = [
     ],
   },
   { id: 'local-isabela', nome: 'Pastora Isabela Quelhas', fotoUrl: fotoIsabela },
-  { id: 'local-alfredo', nome: 'Pastor Alfredo Fujiwara', fotoUrl: fotoAlfredo },
+  {
+    id: 'local-alfredo',
+    nome: 'Pastor Alfredo Fujiwara',
+    fotoUrl: fotoAlfredo,
+    sobre: [
+      'Alfredo Fujiwara é pastor na igreja Vínculo da Paz, casado há 20 anos com a bispa Andrea Fujiwara, e dedica-se ao ministério há 21 anos.',
+      'O que mais o apaixona em Jesus é o Seu amor incondicional, como diz Romanos 5:8: “Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores.”',
+      'Neste tempo, Deus tem falado ao seu coração que Jesus Cristo é o mesmo ontem, hoje e eternamente (Hebreus 13:8).',
+      'Sobre a Igreja no mundo hoje, ele acredita que é preciso deixar Jesus Cristo ser o centro e compreender que Ele é suficiente.',
+    ],
+  },
   {
     id: 'local-andrea',
     nome: 'Bispa Andrea Fujiwara',
